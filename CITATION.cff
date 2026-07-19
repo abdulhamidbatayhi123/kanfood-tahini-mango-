@@ -18,10 +18,12 @@ authors:
     given-names: "Muhammet"
     affiliation: "Yildiz Technical University, Department of Food Engineering"
 version: "1.0.0"
-date-released: "2026-07-14"
+date-released: "2026-07-20"
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
 repository-code: "https://github.com/abdulhamidbatayhi123/kanfood-tahini-mango-"
+doi: "10.5281/zenodo.21446758"
+url: "https://doi.org/10.5281/zenodo.21446758"
 keywords:
   - Kolmogorov-Arnold network
   - interpretable machine learning
