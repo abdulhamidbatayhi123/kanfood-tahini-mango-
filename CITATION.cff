@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software or the tahini dataset, please cite both the article and this repository."
+title: "kanfood: interpretable Kolmogorov–Arnold networks for food spectroscopy"
+abstract: >-
+  Leakage-free, equal-budget pipeline benchmarking an interpretable Kolmogorov-Arnold network against PLS,
+  SVR, random forest, MLP and a 1-D CNN for food adulteration and quality analysis by FTIR/NIR spectroscopy,
+  with closed-form symbolic equations and chemically meaningful response curves. Ships with the open tahini
+  adulteration FTIR dataset (CC-BY-4.0).
+type: software
+authors:
+  - family-names: "Bataihi"
+    given-names: "Abdulhamid"
+    affiliation: "Yildiz Technical University, Department of Food Engineering"
+  - family-names: "Özgölet"
+    given-names: "Muhammed"
+    affiliation: "Yildiz Technical University, Department of Food Engineering"
+  - family-names: "Arici"
+    given-names: "Muhammet"
+    affiliation: "Yildiz Technical University, Department of Food Engineering"
+version: "1.0.0"
+date-released: "2026-07-14"
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/REPLACE-WITH-YOUR-GITHUB-USERNAME/kanfood"
+keywords:
+  - Kolmogorov-Arnold network
+  - interpretable machine learning
+  - chemometrics
+  - near-infrared spectroscopy
+  - FTIR
+  - food adulteration
+preferred-citation:
+  type: article
+  title: "Interpretability without sacrificing accuracy: Kolmogorov–Arnold networks with closed-form calibration equations for food adulteration and quality analysis by vibrational spectroscopy"
+  authors:
+    - family-names: "Bataihi"
+      given-names: "Abdulhamid"
+    - family-names: "Özgölet"
+      given-names: "Muhammed"
+    - family-names: "Arici"
+      given-names: "Muhammet"
+  journal: "Artificial Intelligence in Agriculture"
+  year: 2026
+  notes: "Submitted / under review."
