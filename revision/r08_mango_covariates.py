@@ -58,25 +58,28 @@ def main():
                                  "n_populations": g.group.nunique(), "bias": float(g.res.mean()),
                                  "rmse": float(np.sqrt(np.mean(g.res ** 2))),
                                  "reference_DM_mean": float(g.y.mean())})
-        fit = smf.ols("res ~ C(type) + C(cultivar) + C(temp) + C(region)", d).fit(
-            cov_type="cluster", cov_kwds={"groups": pd.factorize(d.group)[0]})
-        aov = sm.stats.anova_lm(smf.ols("res ~ C(type) + C(cultivar) + C(temp) + C(region)", d).fit(), typ=2)
-        ss_res = aov.loc["Residual", "sum_sq"]
-        for term in aov.index.drop("Residual"):
-            anova_rows.append({"model": m, "term": term, "df": float(aov.loc[term, "df"]),
-                               "partial_eta2": float(aov.loc[term, "sum_sq"] / (aov.loc[term, "sum_sq"] + ss_res)),
-                               "F": float(aov.loc[term, "F"]), "p_naive": float(aov.loc[term, "PR(>F)"])})
-        # clustered Wald test per factor (populations as clusters)
+        # One factor at a time: in the season-4 test set some covariates have a single level and cultivar
+        # is nested in type, so a joint model is not identifiable. Each factor gets a one-way OLS with a
+        # naive F test and a Wald test clustered by population.
         for term in ("type", "cultivar", "temp", "region"):
+            if d[term].nunique() < 2:
+                anova_rows.append({"model": m, "term": f"C({term})", "df": 0.0, "partial_eta2": np.nan,
+                                   "F": np.nan, "p_naive": np.nan, "p_clustered": np.nan,
+                                   "note": "single level in test set"})
+                continue
+            f1 = f"res ~ C({term})"
+            aov = sm.stats.anova_lm(smf.ols(f1, d).fit(), typ=2)
+            ss_t, ss_res = aov.loc[f"C({term})", "sum_sq"], aov.loc["Residual", "sum_sq"]
+            fit = smf.ols(f1, d).fit(cov_type="cluster", cov_kwds={"groups": pd.factorize(d.group)[0]})
             names = [n for n in fit.params.index if n.startswith(f"C({term})")]
-            if names:
-                R = np.zeros((len(names), len(fit.params)))
-                for i, n in enumerate(names):
-                    R[i, list(fit.params.index).index(n)] = 1
-                w = fit.wald_test(R, scalar=True)
-                anova_rows.append({"model": m, "term": f"C({term}) clustered Wald", "df": float(len(names)),
-                                   "partial_eta2": np.nan, "F": float(np.squeeze(w.statistic)),
-                                   "p_naive": float(w.pvalue)})
+            R = np.zeros((len(names), len(fit.params)))
+            for i, n in enumerate(names):
+                R[i, list(fit.params.index).index(n)] = 1
+            w = fit.wald_test(R, scalar=True)
+            anova_rows.append({"model": m, "term": f"C({term})", "df": float(aov.loc[f"C({term})", "df"]),
+                               "partial_eta2": float(ss_t / (ss_t + ss_res)), "F": float(aov.loc[f"C({term})", "F"]),
+                               "p_naive": float(aov.loc[f"C({term})", "PR(>F)"]),
+                               "p_clustered": float(w.pvalue), "note": ""})
     pd.DataFrame(lvl_rows).to_csv(OUT / "residual_by_covariate.csv", index=False)
     pd.DataFrame(anova_rows).to_csv(OUT / "residual_anova.csv", index=False)
     pd.set_option("display.width", 250)
