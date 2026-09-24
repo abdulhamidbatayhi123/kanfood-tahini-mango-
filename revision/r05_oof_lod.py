@@ -86,16 +86,16 @@ def main():
         assert not np.isnan(arr).any()
         P[(m, ps)] = arr
 
-    # Table 4 reproduction: pooled over the three repeats (rows stacked), and per repeat
+    # Table 4 reproduction. "Pooled" = each spectrum's out-of-fold prediction averaged over the three
+    # repeated partitions (this reproduces every Table 4 entry; stacking the repeats does not).
+    AVG = {m: np.mean([P[(m, ps)] for ps in PARTITION_SEEDS], axis=0) for m in MODEL_NAMES}
     rows = []
     for m in MODEL_NAMES:
-        stack = np.vstack([P[(m, ps)] for ps in PARTITION_SEEDS])
-        a3, t3 = np.tile(auth, 3), np.tile(at, 3)
-        L, s, sl = lod(t3, 100 - stack[:, 0], a3)
+        L, s, sl = lod(at, 100 - AVG[m][:, 0], auth)
         per = [lod(at, 100 - P[(m, ps)][:, 0], auth)[0] for ps in PARTITION_SEEDS]
-        rows.append({"model": m, "oof_R2": r2_score(np.tile(ds.y[:, 0], 3), stack[:, 0]), "LOD_pooled": L,
-                     "LOQ_pooled": 10 * s / abs(sl), "LOD_per_repeat": [round(x, 2) for x in per],
-                     "authentic_bias_pp": float((100 - stack[:, 0])[a3].mean())})
+        rows.append({"model": m, "oof_R2": r2_score(ds.y[:, 0], AVG[m][:, 0]), "LOD_pooled": L,
+                     "LOQ_pooled": 10 * s / abs(sl), "LOD_per_repeat": [round(float(x), 2) for x in per],
+                     "authentic_bias_pp": float((100 - AVG[m][:, 0])[auth].mean())})
     t4 = pd.DataFrame(rows)
     t4.to_csv(OUT / "table4_reproduction.csv", index=False)
 
@@ -108,11 +108,11 @@ def main():
     for b in range(N_BOOT):
         idx = np.concatenate([rows_by_sample[s_] for L_ in rng.choice(lots, len(lots))
                               for s_ in rng.choice(samples_by_lot[L_], len(samples_by_lot[L_]))])
-        a = np.tile(auth[idx], 3)
+        a = auth[idx]
         for m in MODEL_NAMES:
-            st = np.vstack([P[(m, ps)][idx] for ps in PARTITION_SEEDS])
-            draws[m]["LOD"].append(lod(np.tile(at[idx], 3), 100 - st[:, 0], a)[0] if a.sum() > 2 else np.nan)
-            draws[m]["R2"].append(r2_score(np.tile(ds.y[idx, 0], 3), st[:, 0]))
+            st = AVG[m][idx]
+            draws[m]["LOD"].append(lod(at[idx], 100 - st[:, 0], a)[0] if a.sum() > 2 else np.nan)
+            draws[m]["R2"].append(r2_score(ds.y[idx, 0], st[:, 0]))
     bs, pairs = [], []
     for m in MODEL_NAMES:
         for k in ("LOD", "R2"):
