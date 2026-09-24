@@ -1,0 +1,17 @@
+channel_cm-1,in_equation_3,selected_under_label_permutation_rate,selected_in_leave_one_lot_out_rate,selected_after_snv_plus_first_derivative,sample_SNR
+3022,False,0.005,1.0,False,3.48
+3005,False,0.48,0.8,True,3.65
+2962,False,0.01,1.0,False,1.8
+1502,True,0.0,1.0,False,1.99
+1487,True,0.155,1.0,True,3.76
+1472,False,0.37,0.4,False,5.01
+1447,True,0.115,1.0,False,4.32
+1302,False,0.21,0.0,False,1.29
+1286,True,0.25,1.0,True,3.17
+1242,True,0.015,1.0,False,8.06
+1227,False,0.04,0.8,True,4.46
+1196,False,0.16,1.0,False,2.51
+1180,True,0.08,1.0,False,2.14
+1140,True,0.37,1.0,True,2.04
+989,True,0.02,1.0,False,4.24
+974,False,0.0,0.2,True,4.57
