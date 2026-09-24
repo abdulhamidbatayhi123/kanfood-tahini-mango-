@@ -1001,3 +1001,4 @@
 {"key": "inner|11|KAN|{\"grid\": 5, \"n_components\": 12, \"width_hidden\": [3]}|0", "stage": "inner", "split": 11, "model": "KAN", "params": "{\"grid\": 5, \"n_components\": 12, \"width_hidden\": [3]}", "score": 0.8973777994552923}
 {"key": "inner|11|KAN|{\"grid\": 5, \"n_components\": 12, \"width_hidden\": [3]}|1", "stage": "inner", "split": 11, "model": "KAN", "params": "{\"grid\": 5, \"n_components\": 12, \"width_hidden\": [3]}", "score": 0.9253507874797102}
 {"key": "inner|11|KAN|{\"grid\": 5, \"n_components\": 12, \"width_hidden\": [3]}|2", "stage": "inner", "split": 11, "model": "KAN", "params": "{\"grid\": 5, \"n_components\": 12, \"width_hidden\": [3]}", "score": 0.9872838091056022}
+{"key": "inner|11|KAN|{\"grid\": 5, \"n_components\": 16, \"width_hidden\": [3]}|0", "stage": "inner", "split": 11, "model": "KAN", "params": "{\"grid\": 5, \"n_components\": 16, \"width_hidden\": [3]}", "score": 0.9351291077326431}

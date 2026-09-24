@@ -25,3 +25,4 @@
 {"key": "SVM|full|42", "model": "SVM", "rep": "full", "k": 16, "input_dim": 103, "seed": 42, "r2": 0.665002961635724, "rmsep": 1.5445534640031022, "n_params": null}
 {"key": "SVM|pls|42", "model": "SVM", "rep": "pls", "k": 16, "input_dim": 16, "seed": 42, "r2": 0.8438971003939097, "rmsep": 1.054357634569309, "n_params": null}
 {"key": "SVM|pca|42", "model": "SVM", "rep": "pca", "k": 16, "input_dim": 16, "seed": 42, "r2": 0.857990460697748, "rmsep": 1.0056369478733, "n_params": null}
+{"key": "SVM|kpca|42", "model": "SVM", "rep": "kpca", "k": 16, "input_dim": 16, "seed": 42, "r2": 0.7541113616221646, "rmsep": 1.3232798305909474, "n_params": null}
