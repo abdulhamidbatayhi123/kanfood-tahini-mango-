@@ -39,7 +39,7 @@ from revision.common import (CFG, SEEDS3, STOCHASTIC, RESULTS, MODEL_NAMES, load
                              unit_of, leave_one_unit_out, fit_predict, inner_score, param_key,
                              ResultStore, run_jobs, log_to, REPO)
 
-PP_WIDE = {"tahini": ["snv", "snv+sg1", "sg1", "msc"],
+PP_WIDE = {"tahini": ["snv", "snv+sg1", "sg1", "msc", "raw"],
            "mango": ["sg1", "snv+sg1", "snv", "raw"]}
 # Arm B also closes an asymmetry in the published search: SVR and RF were fitted at the shared 12- (tahini)
 # or 16-component (mango) PLS front-end while MLP and KAN searched their compression. In B every score
