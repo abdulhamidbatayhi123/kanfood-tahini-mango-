@@ -16,3 +16,8 @@ model/
 # data/tahini/ IS tracked and shipped.
 data/mango/
 data/oils/
+
+# Revision experiments: live, append-only job stores and logs are rewritten while jobs run.
+# Committed copies are the *.snapshot.jsonl files made by revision/snapshot.sh.
+revision/results/*/*store.jsonl
+revision/results/*/*.log
