@@ -1494,3 +1494,4 @@
 {"key": "inner|17|CNN|{\"channels\": [16, 32], \"lr\": 0.001}|2", "stage": "inner", "split": 17, "model": "CNN", "params": "{\"channels\": [16, 32], \"lr\": 0.001}", "score": 0.9711768523361357}
 {"key": "inner|17|CNN|{\"channels\": [16, 32], \"lr\": 0.0003}|0", "stage": "inner", "split": 17, "model": "CNN", "params": "{\"channels\": [16, 32], \"lr\": 0.0003}", "score": 0.9235432776833243}
 {"key": "inner|17|CNN|{\"channels\": [16, 32], \"lr\": 0.0003}|1", "stage": "inner", "split": 17, "model": "CNN", "params": "{\"channels\": [16, 32], \"lr\": 0.0003}", "score": -0.8402643519301657}
+{"key": "inner|17|CNN|{\"channels\": [16, 32], \"lr\": 0.0003}|2", "stage": "inner", "split": 17, "model": "CNN", "params": "{\"channels\": [16, 32], \"lr\": 0.0003}", "score": 0.9629071316770332}
