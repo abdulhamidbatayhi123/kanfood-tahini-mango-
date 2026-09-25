@@ -1,4 +1,4 @@
-"""R09 -- Reviewer 1 comment 7: under the published fixed-step recipe the parameter-matched MLP receives
+"""R09 -- a revision question: under the published fixed-step recipe the parameter-matched MLP receives
 3,600 (tahini) / 32,200 (mango) gradient updates against the KAN's 300. Is the KAN's comparable
 performance a training-budget artefact?
 

@@ -1,4 +1,4 @@
-"""R11 -- Reviewer 2 comment 5: why compress the non-linear mango spectra with LINEAR PLS before the
+"""R11 -- a revision question: why compress the non-linear mango spectra with LINEAR PLS before the
 KAN/MLP? Why not a method that handles non-linearity?
 
 Same external test (season 4), same preprocessing (SG1, window 11), same model configurations as the

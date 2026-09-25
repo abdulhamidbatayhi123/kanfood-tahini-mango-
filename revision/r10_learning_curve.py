@@ -1,4 +1,4 @@
-"""R10 -- Reviewer 2 comment 4: with 38 training samples, are CNN/MLP/KAN appropriate?
+"""R10 -- a revision question: with 38 training samples, are CNN/MLP/KAN appropriate?
 
 Learning curve over the number of independent PHYSICAL SAMPLES in training (not spectra): from the
 published primary training partition (38 samples), draw nested random subsets of n in {10, 15, 20,

@@ -1,7 +1,7 @@
 """R01 -- Leave-one-lot-out (tahini) / leave-one-season-out (mango) with the selection stage nested.
 
-Answers Reviewer 2 comment 6 (hyperparameters carried over from a primary partition that shares
-material with the withheld lot/season = selection leak) and informs Reviewer 1 comments 1, 5, 9, 13.
+Addresses hyperparameters carried over from a primary partition that shares
+material with the withheld lot/season = selection leak) and informs a revision question.
 
 Three arms, identical outer folds (each production lot / harvest season withheld in turn):
 
@@ -13,7 +13,7 @@ Three arms, identical outer folds (each production lot / harvest season withheld
                   leave-one-season-out loop, so the withheld unit never informs any choice.
                   A - F isolates the effect of closing the leak.
   B  nested+pp -- as A, and the preprocessing family is selected in the same inner loop by the
-                  fold-MEAN criterion (Reviewer 1 comment 9 objected to a single-fold maximum).
+                  fold-MEAN criterion rather than a single-fold maximum).
                   B - A isolates the effect of widening the search.
 
 Selection criterion everywhere = the published one (kanfood.tune._fold_score, seed 42).

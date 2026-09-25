@@ -1,5 +1,4 @@
-"""R05 -- Regenerate Table 4's out-of-fold detection limits exactly, then answer Reviewer 1 comments 2, 4
-and 5 on the same predictions.
+"""R05 -- Regenerate Table 4's out-of-fold detection limits exactly, then answer a revision question on the same predictions.
 
 Table 4 pools out-of-fold predictions over three grouped five-fold partitions of all 55 samples. The
 partition seeds are not stated in the article; they are recovered here: kanfood.split.
@@ -8,10 +7,10 @@ stratified_group_kfold with seeds 42, 43 and 44 reproduces the PLS per-repeat li
 
 Outputs:
   table4_reproduction.csv   per model: OOF R^2, pooled LOD, LOD per repeat (compare with Table 4)
-  two_stage_bootstrap.csv   lot -> sample two-stage bootstrap of the pooled LOD and OOF R^2 (R1-5)
-  pairs.csv                 paired two-stage-bootstrap differences between models, Holm (R1-2)
-  authentic.csv             per lot: mean predicted adulterant on authentic tahini (bias), per repeat (R1-4)
-  per_level.csv             per adulterant x level: identification, error, detection (R1-3)
+  two_stage_bootstrap.csv   lot -> sample two-stage bootstrap of the pooled LOD and OOF R^2 (revision question)
+  pairs.csv                 paired two-stage-bootstrap differences between models, Holm (revision question)
+  authentic.csv             per lot: mean predicted adulterant on authentic tahini (bias), per repeat (revision question)
+  per_level.csv             per adulterant x level: identification, error, detection (revision question)
 Run: python -m revision.r05_oof_lod
 """
 from __future__ import annotations

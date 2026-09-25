@@ -1,5 +1,5 @@
-"""R04 -- Reviewer 2 comment 8 (power: 3-5 seeds/folds) and Reviewer 1 comment 6 (which comparisons
-are claims and which are descriptive rankings).
+"""R04 -- statistical power with 3-5 seeds/folds, and which comparisons
+are claims and which are descriptive rankings.
 
 The corrected resampled t-test of Nadeau & Bengio (2003) was derived for J independent random
 train/test splits of one dataset, with the variance inflated by (1/J + n_test/n_train). The published

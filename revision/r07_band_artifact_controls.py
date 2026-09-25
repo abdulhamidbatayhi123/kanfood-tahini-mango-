@@ -1,6 +1,6 @@
 """R07 -- Are the selected ("unassigned") tahini channels chemistry, or drift / baseline / noise?
 
-Reviewer 2 comment 7 and Reviewer 1 comment 11. Five tests, each with a stated expectation under the
+a revision question and a revision question. Five tests, each with a stated expectation under the
 artifact hypothesis, computed on the raw released spectra (no model in the loop except test 4):
 
   1. Dose-response.  Chemistry => the sample-mean (SNV) absorbance at the channel varies monotonically

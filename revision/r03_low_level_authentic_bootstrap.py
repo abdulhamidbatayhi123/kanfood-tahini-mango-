@@ -5,14 +5,14 @@ T2: 8/28/..., T5: 20/.../100 %) and both adulterants, leave-one-lot-out places E
 adulterants, including 4, 8 and 12 %, out of fold exactly once, and every authentic lot too. That is
 what makes the following possible without any new model fit:
 
-  (a) Reviewer 1 comment 3 -- identification and quantification at LOW levels: per level and
+  (a) a revision question -- identification and quantification at LOW levels: per level and
       adulterant, identification accuracy (argmax of predicted peanut vs sunflower fraction),
       detection rate at the threshold, predicted adulterant % and its error.
-  (b) Reviewer 1 comment 4 -- authentic tahini: per lot, mean predicted adulterant (bias), and the
+  (b) a revision question -- authentic tahini: per lot, mean predicted adulterant (bias), and the
       false-positive rate at the detection threshold, per spectrum and per sample (replicate mean).
       The threshold is re-chosen inside each outer training set with the published rule
       (run_experiment._choose_threshold: PLS, 3-fold grouped CV, max F1), so it never sees the lot.
-  (c) Reviewer 1 comment 5 -- lot-nested (two-stage) cluster bootstrap: resample lots with
+  (c) a revision question -- lot-nested (two-stage) cluster bootstrap: resample lots with
       replacement, then physical samples within each drawn lot, for R^2, the out-of-fold LOD and the
       paired difference between models. With five lots, the lot level is coarse; that is reported.
   (d) The out-of-fold LOD (3.3 sigma/S) from these leave-one-lot-out predictions, beside Table 4's

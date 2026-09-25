@@ -1,4 +1,4 @@
-"""R08 -- Reviewer 1 comment 12: are fruit condition, cultivar, temperature and region controlled?
+"""R08 -- a revision question: are fruit condition, cultivar, temperature and region controlled?
 
 The mango benchmark was built by its authors to CONTAIN these sources of variation rather than to
 control them (four seasons, two regions, ten cultivars, hard-green and ripened fruit, and a recorded

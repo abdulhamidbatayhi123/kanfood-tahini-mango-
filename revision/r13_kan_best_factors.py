@@ -1,4 +1,4 @@
-"""R13 -- Reviewer 1 comment 13: Supplementary Table S4 shows eight single-factor variants scoring above the
+"""R13 -- a revision question: Supplementary Table S4 shows eight single-factor variants scoring above the
 published tahini KAN configuration in cross-validation (best: SNV + first-derivative SG, +0.040). Do the
 conclusions depend on a knowingly sub-optimal configuration?
 

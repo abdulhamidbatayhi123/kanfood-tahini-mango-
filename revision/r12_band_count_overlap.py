@@ -1,4 +1,4 @@
-"""R12 -- Reviewer 2 comment 3: when a few channels are selected by VIP, how does the overlapping nature of
+"""R12 -- a revision question: when a few channels are selected by VIP, how does the overlapping nature of
 vibrational bands affect the result, and how do we know the number of channels is sufficient?
 
 Tahini, published primary split, SNV, linear calibration (OLS on the selected channels; a linear control is
