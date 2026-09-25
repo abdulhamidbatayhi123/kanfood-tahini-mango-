@@ -1,0 +1,19 @@
+covariate,level,calibration_share,test_share,absent_from_calibration
+type,Hard Green,0.8934,0.3867,False
+type,Ripen,0.1066,0.6133,False
+cultivar,1201,0.0389,0.0,False
+cultivar,1243,0.0391,0.0,False
+cultivar,4069,0.0391,0.0,False
+cultivar,Caly,0.2926,0.3198,False
+cultivar,HG,0.1444,0.1651,False
+cultivar,KP,0.2231,0.2196,False
+cultivar,Keitt,0.0323,0.0,False
+cultivar,LadyG,0.034,0.0,False
+cultivar,LadyJ,0.0389,0.0,False
+cultivar,R2E2,0.1178,0.2956,False
+temp,High,0.1383,0.0,False
+temp,Low,0.1445,0.0,False
+temp,Mid,0.1441,0.0,False
+temp,No,0.5731,1.0,False
+region,NT,0.7263,0.4848,False
+region,QLD,0.2737,0.5152,False

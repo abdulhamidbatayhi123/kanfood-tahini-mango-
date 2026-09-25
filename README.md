@@ -83,6 +83,33 @@ Data locations are configurable through environment variables (defaults are repo
   the `MANGO_GRIDS` in `kanfood/run_mango.py`).
 - `python -m pytest -q` runs the test suite; tests that need a dataset skip automatically when it is absent.
 
+## Revision analyses (`revision/`)
+
+The analyses reported in Sections S4 and S14–S23 of the Supplementary Materials of the revised article.
+Each script writes CSV files to `revision/results/<id>/`; the tables of the Supplementary Materials are
+formatted views of these files.
+
+| Script | Supplementary section |
+|---|---|
+| `r01_nested_generalisation.py` | S4, Table S3: leave-one-lot-out / leave-one-season-out with selection nested in each fold (and the frozen control) |
+| `r03_low_level_authentic_bootstrap.py` | S16–S17: low-level identification, false positives on authentic tahini, two-stage lot/sample bootstrap |
+| `r04_repeated_grouped_splits.py` | S23: 30 repeated grouped hold-outs, corrected t-tests and equivalence tests |
+| `r05_oof_lod.py` | Table 4 and S17: out-of-fold detection limits and their bootstrap |
+| `r07_band_artifact_controls.py`, `r07b_band_confound_checks.py` | S14: artefact controls for the selected channels |
+| `r08_mango_covariates.py` | S18: mango residuals by cultivar, ripening treatment and region |
+| `r09_training_budget.py` | S21: training-budget crossover |
+| `r10_learning_curve.py`, `figS9_learning_curve.py` | S20, Figure S9: learning curve |
+| `r11_mango_input_representation.py` | S19: input representations for mango |
+| `r12_band_count_overlap.py` | S15: number of channels and band overlap |
+| `r13_kan_best_factors.py` | S22: the KAN with the favourable design choices combined |
+| `r14_mango_mlp_tie.py` | S8: the near-tie in the mango MLP selection |
+| `fig1_pipeline.py` | Figure 1 |
+
+Run any of them as `python -m revision.<script>` from the repository root (mango data: `python -m kanfood.fetch_mango`).
+`results_phase1/` and `results_mango/` hold the reproduced benchmark (Tables 2 and 3); the mango MLP configuration
+in `results_mango/mango_meta.json` is pinned to the published one, and the configuration selected by the rerun is kept
+in `mango_meta.reproduced.json` (see Section S8).
+
 ## Package layout
 
 | Module | Purpose |

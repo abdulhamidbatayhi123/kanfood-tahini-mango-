@@ -1,0 +1,4 @@
+series,n_samples,spearman_rho_vapour_vs_adulterant,p
+peanut,30,-0.319,0.0862
+sunflower,30,-0.516,0.0035
+"lot effect on vapour index (Kruskal-Wallis, all 55 samples)",55,10.098,0.0388
