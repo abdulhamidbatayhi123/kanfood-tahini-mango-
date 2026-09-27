@@ -3,7 +3,7 @@
 This repository holds the code, the open tahini dataset and every result file behind the article
 
 > Batayhi, A.; Özgölet, M.; Cankurt, H.; Arici, M. *Interpretable Machine Learning in Food Analysis:
-> Closed-Form Chemometric Calibration of FTIR and NIR Spectroscopy Using Kolmogorov–Arnold Networks.*
+> Closed-Form Chemometric Calibration of Mid- and Near-Infrared Spectra Using Kolmogorov–Arnold Networks.*
 > *Foods* (MDPI), manuscript foods-4561619 (under revision).
 
 A Kolmogorov–Arnold network (KAN) is compared with PLS regression, support-vector regression (SVR), a random

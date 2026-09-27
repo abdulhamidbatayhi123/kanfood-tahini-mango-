@@ -19,7 +19,7 @@ authors:
   - family-names: "Arici"
     given-names: "Muhammed"
     affiliation: "Yildiz Technical University, Department of Food Engineering"
-version: "2.1.0"
+version: "2.1.1"
 date-released: "2026-09-28"
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
@@ -35,7 +35,7 @@ keywords:
   - food adulteration
 preferred-citation:
   type: article
-  title: "Interpretable Machine Learning in Food Analysis: Closed-Form Chemometric Calibration of FTIR and NIR Spectroscopy Using Kolmogorov–Arnold Networks"
+  title: "Interpretable Machine Learning in Food Analysis: Closed-Form Chemometric Calibration of Mid- and Near-Infrared Spectra Using Kolmogorov–Arnold Networks"
   authors:
     - family-names: "Batayhi"
       given-names: "Abdulhamid"

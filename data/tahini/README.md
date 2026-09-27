@@ -1,7 +1,7 @@
 # Tahini adulteration FTIR dataset
 
 Open dataset accompanying the article *"Interpretable Machine Learning in Food Analysis: Closed-Form
-Chemometric Calibration of FTIR and NIR Spectroscopy Using Kolmogorov–Arnold Networks"* (*Foods*, MDPI,
+Chemometric Calibration of Mid- and Near-Infrared Spectra Using Kolmogorov–Arnold Networks"* (*Foods*, MDPI,
 manuscript foods-4561619). Released for full reproducibility and transparency.
 
 **License:** Creative Commons Attribution 4.0 International (CC-BY-4.0) — see `../../LICENSE-DATA`.
