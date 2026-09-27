@@ -1,0 +1,25 @@
+Dataset,Order,Position,Unit,Assignment,Associated with,Source of the assignment,In Equation (3)
+tahini,1,3022,cm⁻¹,unassigned,—,no tabulated assignment,—
+tahini,2,3005,cm⁻¹,=C-H stretch (cis C=C),Unsaturated fatty acids,tabulated band,—
+tahini,3,2962,cm⁻¹,C–H stretch region (CH3 asymmetric),Lipid acyl chains,"region, not a tabulated band",—
+tahini,4,1502,cm⁻¹,unassigned,—,no tabulated assignment,yes
+tahini,5,1487,cm⁻¹,unassigned,—,no tabulated assignment,yes
+tahini,6,1472,cm⁻¹,CH2 bending (scissor),Lipids,tabulated band,—
+tahini,7,1447,cm⁻¹,unassigned,—,no tabulated assignment,yes
+tahini,8,1302,cm⁻¹,C–O stretch / CH2 wagging region,"Esters, acyl chains","region, not a tabulated band",—
+tahini,9,1286,cm⁻¹,C–O stretch / CH2 wagging region,"Esters, acyl chains","region, not a tabulated band",yes
+tahini,10,1242,cm⁻¹,C–O stretch / CH2 wagging region,"Esters, acyl chains","region, not a tabulated band",yes
+tahini,11,1227,cm⁻¹,C–O stretch / CH2 wagging region,"Esters, acyl chains","region, not a tabulated band",—
+tahini,12,1196,cm⁻¹,C–O stretch / CH2 wagging region,"Esters, acyl chains","region, not a tabulated band",—
+tahini,13,1180,cm⁻¹,C–O stretch / CH2 wagging region,"Esters, acyl chains","region, not a tabulated band",yes
+tahini,14,1140,cm⁻¹,unassigned,—,no tabulated assignment,yes
+tahini,15,989,cm⁻¹,=C–H out-of-plane bend region,Unsaturation (trans),"region, not a tabulated band",yes
+tahini,16,974,cm⁻¹,=C–H out-of-plane bend region,Unsaturation (trans),"region, not a tabulated band",—
+mango,1,990,nm,unassigned,—,no tabulated assignment,—
+mango,2,981,nm,O–H 2nd overtone,Water (complement of dry matter),tabulated band,—
+mango,3,942,nm,unassigned,—,no tabulated assignment,—
+mango,4,933,nm,unassigned,—,no tabulated assignment,—
+mango,5,924,nm,C–H 3rd overtone (CH₂/CH₃),Carbohydrate,tabulated band,—
+mango,6,903,nm,C–H 3rd overtone (CH₂/CH₃),Carbohydrate,tabulated band,—
+mango,7,894,nm,unassigned,—,no tabulated assignment,—
+mango,8,885,nm,unassigned,—,no tabulated assignment,—

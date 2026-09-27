@@ -51,6 +51,20 @@ class Preprocessor:
             return self._sg(X, 2)
         if m == "snv+sg1":
             return self._sg(snv(X), 1)
+        # Additional scatter-correction / derivative combinations. These are new options only:
+        # every method above behaves exactly as before, so results produced with them are
+        # unaffected. The second derivative in particular is the transform used by the best
+        # published mango dry-matter calibrations and was missing from the original grid.
+        if m == "snv+sg2":
+            return self._sg(snv(X), 2)
+        if m == "msc+sg1":
+            return self._sg(self._msc(X), 1)
+        if m == "msc+sg2":
+            return self._sg(self._msc(X), 2)
+        if m == "sg1+snv":
+            return snv(self._sg(X, 1))
+        if m == "sg2+snv":
+            return snv(self._sg(X, 2))
         raise ValueError(f"unknown method: {m}")
 
     def fit_transform(self, X: np.ndarray) -> np.ndarray:

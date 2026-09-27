@@ -1,8 +1,8 @@
 # Tahini adulteration FTIR dataset
 
-Open dataset accompanying the paper *"Interpretability without sacrificing accuracy: Kolmogorov–Arnold
-networks with closed-form calibration equations for food adulteration and quality analysis by vibrational
-spectroscopy."* Released for full reproducibility and transparency.
+Open dataset accompanying the article *"Interpretable Machine Learning in Food Analysis: Closed-Form
+Chemometric Calibration of FTIR and NIR Spectroscopy Using Kolmogorov–Arnold Networks"* (*Foods*, MDPI,
+manuscript foods-4561619). Released for full reproducibility and transparency.
 
 **License:** Creative Commons Attribution 4.0 International (CC-BY-4.0) — see `../../LICENSE-DATA`.
 If you use this dataset, please cite the paper and this repository (see `../../CITATION.cff`).

@@ -206,10 +206,11 @@ class KANModel(_Torch):
     """KAN on decorrelated PLS-score inputs, MinMax-scaled into the [-1,1] B-spline grid.
     Root-caused fix (Phase 1.5) for KAN instability: collinear inputs + grid extrapolation."""
 
-    def __init__(self, width_hidden=(10, 5), grid=5, lamb=0.001, steps=300, seed=42, fast=False, **_):
+    def __init__(self, width_hidden=(10, 5), grid=5, k=3, lamb=0.001, steps=300, seed=42, fast=False, **_):
         super().__init__(seed, fast)
         self.width_hidden = width_hidden
         self.grid = grid
+        self.k = k
         self.lamb = lamb
         self.steps = 5 if fast else steps
 
@@ -225,7 +226,7 @@ class KANModel(_Torch):
               "test_input": torch.tensor(Xs, dtype=torch.float32),
               "test_label": torch.tensor(ys, dtype=torch.float32)}
         width = [X.shape[1]] + list(self.width_hidden) + [y.shape[1]]
-        self.model = KAN(width=width, grid=self.grid, k=3, seed=self.seed,
+        self.model = KAN(width=width, grid=self.grid, k=self.k, seed=self.seed,
                          device="cpu", auto_save=False, grid_range=[-1, 1])
         self.model.fit(ds, opt="Adam", steps=self.steps, lr=0.005, batch=128, lamb=self.lamb)
         return self

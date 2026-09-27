@@ -1,0 +1,4 @@
+dataset,stage,method,window,poly,nc,model,R2,R2_sd
+tahini,s2_models,snv+sg1,21,2,12,PLS nc=12,0.995260891266134,0.0
+tahini,s2_models,msc,11,2,8,MLP nc=8,0.994489155316836,0.0
+tahini,s2_models,snv+sg1,21,2,8,KAN nc=8,0.9805493302381727,0.0

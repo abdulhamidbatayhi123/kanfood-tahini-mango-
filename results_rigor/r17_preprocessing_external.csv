@@ -1,0 +1,15 @@
+dataset,stage,method,window,poly,nc,model,R2,R2_sd,config
+tahini,s3_external,snv+sg1,21,2,12,PLS nc=12,0.9954071372744722,0.0,selected
+tahini,s3_external,snv+sg1,21,2,8,KAN nc=8,0.9829238843476276,0.0026696157796697,selected
+tahini,s3_external,snv+sg1,21,2,8,MLP nc=8,0.990142190185848,0.0021712516293258,selected
+tahini,s3_external,snv,11,2,12,PLS nc=12,0.9943223164955398,0.0,published
+tahini,s3_external,snv,11,2,8,KAN nc=8,0.9834786244384454,0.0056210113504257,published
+tahini,s3_external,snv,11,2,8,MLP nc=8,0.9872162241420788,0.0009839091373923,published
+mango,s3_external,sg1,11,2,24,PLS nc=24,0.8452398285578091,0.0,selected
+mango,s3_external,sg1,11,2,24,KAN nc=24,0.8618768578460049,0.008973642889826468,selected
+mango,s3_external,sg1,11,2,12,KAN nc=12,0.8286820925968906,0.014038357694027958,selected
+mango,s3_external,sg1,11,2,16,MLP nc=16,0.8732734933913814,0.007855616734404335,selected
+mango,s3_external,sg1,11,2,24,PLS nc=24,0.8452398285578091,0.0,published
+mango,s3_external,sg1,11,2,24,KAN nc=24,0.8618768578460049,0.008973642889826468,published
+mango,s3_external,sg1,11,2,12,KAN nc=12,0.8286820925968906,0.014038357694027958,published
+mango,s3_external,sg1,11,2,16,MLP nc=16,0.8732734933913814,0.007855616734404335,published

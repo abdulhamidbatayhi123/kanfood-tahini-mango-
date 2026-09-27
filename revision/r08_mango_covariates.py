@@ -11,7 +11,7 @@ error each factor explains, for every model, on the published season-4 test:
      type + cultivar + temperature label + region, with type-II ANOVA and partial eta^2.
   4. Cultivars absent from calibration are flagged.
 
-Predictions are the published benchmark's (results_mango/mango_artifacts.npz from kanfood.run_mango),
+Predictions are those of the reproduction of the benchmark with the released code (revision/results/benchmark_reproduction/results_mango/mango_artifacts.npz, from kanfood.run_mango; Supplementary Section S8),
 aligned to metadata by row order.   Run: python -m revision.r08_mango_covariates
 """
 from __future__ import annotations
@@ -30,7 +30,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 def main():
     ds, meta = load("mango")
     tr, te = primary_split("mango", ds, meta)
-    art = np.load(REPO / "results_mango" / "mango_artifacts.npz", allow_pickle=True)
+    art = np.load(REPO / "revision" / "results" / "benchmark_reproduction" / "results_mango" / "mango_artifacts.npz", allow_pickle=True)
     assert np.allclose(art["y_test"][:, 0], ds.y[te, 0])
     m_te = meta.iloc[te].reset_index(drop=True)
     y = ds.y[te, 0]

@@ -1,0 +1,17 @@
+dataset,protocol,source,top3_overlap,spearman
+tahini,P0 published,seed,0.8148148148148147,0.8058201058201061
+tahini,P0 published,fold,0.8666666666666668,0.6761904761904762
+tahini,P0 published,preprocess,0.7777777777777777,0.8412698412698413
+tahini,P0 published,repeat,1.0,1.0
+tahini,P3 corrected,seed,0.8148148148148147,0.8058201058201061
+tahini,P3 corrected,fold,0.8666666666666668,0.6761904761904762
+tahini,P3 corrected,preprocess,0.7777777777777777,0.8412698412698413
+tahini,P3 corrected,repeat,1.0,1.0
+mango,P0 published,seed,1.0,0.7752913752913754
+mango,P0 published,fold,1.0,0.7615384615384617
+mango,P0 published,preprocess,0.3333333333333333,0.7296037296037298
+mango,P0 published,repeat,1.0,1.0
+mango,P3 corrected,seed,1.0,0.7752913752913754
+mango,P3 corrected,fold,1.0,0.7615384615384617
+mango,P3 corrected,preprocess,0.3333333333333333,0.7296037296037298
+mango,P3 corrected,repeat,1.0,1.0

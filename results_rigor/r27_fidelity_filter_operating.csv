@@ -1,0 +1,17 @@
+failure,threshold,failures,sound,total,kept,discarded,failures_kept,failures_caught,good_discarded,worst_shortfall_kept
+catastrophic (equation R² < 0.5),0.0,4,284,288,286,2,2,2,0,0.4516619356422839
+catastrophic (equation R² < 0.5),0.5,4,284,288,283,5,0,4,1,0.24898837881331992
+catastrophic (equation R² < 0.5),0.7,4,284,288,278,10,0,4,6,0.24898837881331992
+catastrophic (equation R² < 0.5),0.8,4,284,288,270,18,0,4,14,0.24776571370035194
+catastrophic (equation R² < 0.5),0.9,4,284,288,259,29,0,4,25,0.10523509284457555
+catastrophic (equation R² < 0.5),0.95,4,284,288,235,53,0,4,49,0.10523509284457555
+catastrophic (equation R² < 0.5),0.98,4,284,288,125,163,0,4,159,0.01751824540593061
+catastrophic (equation R² < 0.5),0.99,4,284,288,93,195,0,4,191,0.0034292118979730724
+material (falls > 0.05 R² below its network),0.0,26,262,288,286,2,24,2,0,0.4516619356422839
+material (falls > 0.05 R² below its network),0.5,26,262,288,283,5,21,5,0,0.24898837881331992
+material (falls > 0.05 R² below its network),0.7,26,262,288,278,10,20,6,4,0.24898837881331992
+material (falls > 0.05 R² below its network),0.8,26,262,288,270,18,17,9,9,0.24776571370035194
+material (falls > 0.05 R² below its network),0.9,26,262,288,259,29,9,17,12,0.10523509284457555
+material (falls > 0.05 R² below its network),0.95,26,262,288,235,53,3,23,30,0.10523509284457555
+material (falls > 0.05 R² below its network),0.98,26,262,288,125,163,0,26,137,0.01751824540593061
+material (falls > 0.05 R² below its network),0.99,26,262,288,93,195,0,26,169,0.0034292118979730724

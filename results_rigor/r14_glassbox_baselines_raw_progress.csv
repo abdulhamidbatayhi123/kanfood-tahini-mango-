@@ -1,0 +1,43 @@
+dataset,representation,model,seed,R2,seconds,expression
+tahini,PLS scores,EBM,42,0.9805898131185176,67.6,
+tahini,PLS scores,EBM,7,0.9798917079792878,59.4,
+tahini,PLS scores,EBM,2024,0.9799601108625318,74.7,
+tahini,PLS scores,EBM+int,42,0.9888313376049909,787.0,
+tahini,PLS scores,EBM+int,7,0.9870161944172188,496.5,
+tahini,PLS scores,EBM+int,2024,0.9871158797739346,661.1,
+tahini,PLS scores,GAM,42,0.9823381181581812,3.1,
+tahini,PLS scores,GAM,7,0.9823381181581812,2.7,
+tahini,PLS scores,GAM,2024,0.9823381181581812,2.5,
+tahini,PLS scores,XGBoost,42,0.9479101679802521,4.2,
+tahini,PLS scores,XGBoost,7,0.9496370311678641,2.6,
+tahini,PLS scores,XGBoost,2024,0.9507110009832257,2.6,
+tahini,PLS scores,spline-MLP,42,0.99402417046776,210.5,
+tahini,PLS scores,spline-MLP,7,0.9929052451481809,251.0,
+tahini,PLS scores,spline-MLP,2024,0.9934998956579347,256.3,
+tahini,PLS scores,MLP(ref),42,0.9879849832597676,42.4,
+tahini,PLS scores,MLP(ref),7,0.9915773869312112,50.3,
+tahini,PLS scores,MLP(ref),2024,0.9854979419155031,40.9,
+tahini,PLS scores,SR (gplearn),42,0.22511470741333117,155.8,"mul(log(mul(add(add(add(add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), sqrt(add(X2, X0))), div(mul(sqrt(X1), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), X6), X6), mul(X7, X7)), div(-0.337, 0.549)), add(X0, X6)), add(mul(log(mul(add(add(add(add(sqrt(mul(X5, div(mul(sub(add(add(X2, X0), add(X2, X2)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X6), sqrt(X1)), add(div(mul(sqrt(X6), sqrt(X1)), add(mul(sqrt(X6), div(mul(sqrt(X6), add(sqrt(X1), sin(X5))), div(mul(sqrt(X6), div(mul(sqrt(X6), sqrt(add(X6, X1))), add(add(X2, X0), sqrt(add(X2, X0))))), add(add(X2, X0), add(X2, X2))))), add(X2, X2))), add(X2, X2)))))), X6), mul(X7, X7)), div(-0.337, 0.549)), add(X0, X6)), add(mul(X7, X2), mul(X5, X0)))), add(sqrt(add(sqrt(X4), log(div(mul(sub(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(add(X0, X5), X1)), add(sqrt(X1), mul(add(log(X1), mul(X7, X7)), add(add(sqrt(mul(X5, div(mul(sub(add(mul(X7, X2), mul(X5, X0)), mul(sqrt(X6), sqrt(X1))), add(X2, X2)), div(sqrt(X1), add(add(X2, X0), add(X2, X2)))))), X6), mul(X7, X7))))), div(mul(sqrt(X6), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(X2, add(add(X2, X0), add(X2, X2))))))), log(div(mul(sub(add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X1), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), X6), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(add(X2, X0)), sqrt(X1)), add(add(X2, X0), add(X2, X2))))))), X0))), add(sqrt(add(sqrt(X4), log(div(mul(sub(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(add(X0, X5), X1)), add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X1), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), X6), sin(X5))), div(mul(sqrt(X6), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(X2, add(add(X2, X0), add(X2, X2))))))), log(div(mul(sub(add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), add(X1, X1)), div(mul(mul(X2, sqrt(X1)), sqrt(X1)), add(add(X2, X2), add(X2, X2)))))), X6), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(add(X2, X0)), sqrt(X1)), add(add(X2, X0), add(add(X2, sub(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(add(X0, X5), X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X6), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), mul(X7, X7)), add(X1, X1))), X2)))))))"
+tahini,PLS scores,SR (gplearn),7,0.8639466034820682,89.4,"add(sub(X3, X1), div(log(sqrt(add(sub(X6, X1), sub(add(add(mul(sub(X3, 0.399), sqrt(X7)), X0), div(sqrt(log(div(sqrt(log(div(sqrt(X7), sin(0.027)))), sin(0.027)))), sin(0.027))), sin(0.027))))), sin(0.027)))"
+tahini,PLS scores,SR (gplearn),2024,0.38036739541131914,98.0,"div(add(sqrt(log(add(div(div(add(sqrt(add(sqrt(log(div(X2, X7))), X7)), sin(X7)), 0.069), log(X3)), X3))), add(add(sqrt(add(add(X7, sqrt(sqrt(X5))), X6)), div(-0.369, sqrt(log(log(add(div(div(add(sqrt(add(sqrt(log(div(div(X2, div(X2, X7)), -0.032))), X7)), div(sin(X7), X7)), 0.069), log(X3)), X3)))))), sqrt(X5))), 0.069)"
+mango,PLS scores,EBM,42,0.8480123982128858,73.8,
+mango,PLS scores,EBM,7,0.8470017601823545,72.3,
+mango,PLS scores,EBM,2024,0.8479482996680714,71.2,
+mango,PLS scores,EBM+int,42,0.862922155460392,384.3,
+mango,PLS scores,EBM+int,7,0.8572145014128195,605.0,
+mango,PLS scores,EBM+int,2024,0.8579458130167065,761.6,
+mango,PLS scores,GAM,42,0.8497896779131481,76.1,
+mango,PLS scores,GAM,7,0.8497896779131481,75.6,
+mango,PLS scores,GAM,2024,0.8497896779131481,77.2,
+mango,PLS scores,XGBoost,42,0.8355132022172891,18.8,
+mango,PLS scores,XGBoost,7,0.8359216803533149,20.3,
+mango,PLS scores,XGBoost,2024,0.8456280872514439,18.4,
+mango,PLS scores,spline-MLP,42,0.8697799402208581,2885.3,
+mango,PLS scores,spline-MLP,7,0.8546448988580218,5105.5,
+mango,PLS scores,spline-MLP,2024,0.8544055689872418,3916.1,
+mango,PLS scores,MLP(ref),42,0.8892647794882508,1286.6,
+mango,PLS scores,MLP(ref),7,0.8880714254771931,995.4,
+mango,PLS scores,MLP(ref),2024,0.8908133019837088,731.6,
+mango,PLS scores,SR (gplearn),42,0.2097212028481803,890.8,"log(mul(div(mul(add(sub(sub(X23, X1), add(log(log(0.961)), log(X21))), X0), div(add(sub(sin(X20), add(log(X14), log(X21))), X0), -0.001)), log(0.961)), log(mul(add(sin(mul(div(div(X5, X0), add(X19, X12)), X9)), log(X21)), div(add(sub(mul(sqrt(add(log(X19), log(X14))), sub(mul(log(div(div(div(div(X1, X15), mul(-0.295, X15)), sin(div(X17, 0.684))), sin(div(X1, X14)))), mul(X0, sqrt(log(0.961)))), add(log(sin(X9)), log(X21)))), add(div(0.599, X19), log(X21))), mul(log(X7), X12)), -0.001)))))"
+mango,PLS scores,SR (gplearn),7,0.04953154942984661,486.5,"sqrt(sub(sub(div(sqrt(div(sqrt(sub(div(sqrt(sub(sub(div(sqrt(add(log(sqrt(-0.003)), add(X15, X3))), sqrt(-0.003)), add(X1, log(X14))), add(X15, X3))), sqrt(-0.003)), add(X1, log(X14)))), sqrt(-0.003))), sqrt(-0.003)), X1), X1))"
+mango,PLS scores,SR (gplearn),2024,-0.6625220592653769,632.5,"add(add(sqrt(sqrt(sqrt(X10))), add(sub(sqrt(mul(sqrt(sqrt(sub(log(X5), div(add(X15, X16), X19)))), sub(sub(sqrt(mul(sub(sqrt(X15), log(X18)), sub(X16, log(X22)))), log(add(X15, X16))), log(X22)))), sub(log(X16), X18)), sin(sqrt(X10)))), add(sqrt(sqrt(sqrt(sub(log(X5), div(add(X15, X16), X19))))), add(sub(sqrt(mul(sqrt(sqrt(log(X19))), sub(sqrt(sub(log(div(X14, X11)), sub(X12, X6))), log(X22)))), log(add(X15, X16))), sin(sub(sqrt(X15), sub(sqrt(mul(sqrt(sqrt(sub(log(X5), div(sin(sqrt(X15)), X19)))), sub(sqrt(X15), log(X22)))), log(add(X15, X16))))))))"

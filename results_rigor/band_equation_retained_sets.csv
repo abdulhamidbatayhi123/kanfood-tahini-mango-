@@ -1,0 +1,10 @@
+Dataset,Band set,Selection,Bands offered,Model,Seeds,"Bands retained, median","Bands retained, min","Bands retained, max","Terms, min","Terms, max",Bands in at least one equation,Bands in every equation,The bands in every equation
+tahini,external,vip,12,"KAN (2,) equation",5,10,0,11,19,21,12,0,—
+tahini,external,vip,12,"KAN (3,) equation",5,10,9,11,17,24,12,6,3005;1487;1286;1242;1227;989
+tahini,external,vip,12,KAN additive equation,5,8,6,10,8,12,10,6,3005;1487;1447;1286;1242;1227
+tahini,external,vip,16,"KAN (2,) equation",5,14,10,14,18,32,15,8,1487;1447;1302;1286;1242;1227;989;974
+tahini,external,vip,16,"KAN (3,) equation",5,13,8,16,18,32,16,7,3022;1487;1472;1286;1242;1227;989
+tahini,external,vip,16,KAN additive equation,5,6,4,9,5,12,10,3,1487;1286;1242
+tahini,external_anchored,anchored,8,"KAN (2,) equation",5,7,6,8,9,23,8,6,3009;2922;2853;1744;1466;721
+tahini,external_anchored,anchored,8,"KAN (3,) equation",5,7,6,8,13,28,8,6,3009;2922;2853;1744;1466;721
+tahini,external_anchored,anchored,8,KAN additive equation,5,7,6,8,9,12,8,6,2922;2853;1653;1466;1163;721

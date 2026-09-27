@@ -1,0 +1,5 @@
+family,comparison,reason
+basis/tahini/PLS scores/fidelity,bspline 1 hidden layer,missing or non-finite at some seed
+basis/tahini/selected bands/fidelity,bspline 1 hidden layer,missing or non-finite at some seed
+basis/mango/PLS scores/fidelity,bspline 1 hidden layer,missing or non-finite at some seed
+basis/mango/selected bands/fidelity,bspline 1 hidden layer,missing or non-finite at some seed

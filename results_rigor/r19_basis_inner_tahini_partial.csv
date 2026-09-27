@@ -1,0 +1,211 @@
+basis,degree,lamb,prune,seed,R2,n_params,n_vars,fidelity,n_terms,equation,arch,dataset,representation,stage
+cheby,4,0.0001,0.05,42,0.9710034285401673,123,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,6,0.0001,0.05,42,0.9518263785147204,171,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,8,0.0001,0.05,42,0.9469280879408328,219,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,4,0.0001,0.05,42,0.9858647192180324,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,6,0.0001,0.05,42,0.9854838334614884,234,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,8,0.0001,0.05,42,0.9857599072183185,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,4,0.0001,0.05,42,0.8114789695846341,123,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,6,0.0001,0.05,42,0.8180531442080882,171,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,8,0.0001,0.05,42,0.7795414677012893,219,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,4,0.0001,0.05,42,0.8014751320859579,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,6,0.0001,0.05,42,0.7867236908639886,234,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,8,0.0001,0.05,42,0.7032883077235612,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,4,0.0001,0.05,42,0.9667653763824818,123,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,6,0.0001,0.05,42,0.9704601326786222,171,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,8,0.0001,0.05,42,0.9703714332002309,219,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,4,0.0001,0.05,42,0.9771384367171932,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,6,0.0001,0.05,42,0.9843768902323957,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,8,0.0001,0.05,42,0.9804192653704565,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,4,0.0001,0.05,42,0.9529484962458589,123,7,,,,additive,tahini,PLS scores,inner_basis
+poly,6,0.0001,0.05,42,0.9462834238494385,171,7,,,,additive,tahini,PLS scores,inner_basis
+poly,8,0.0001,0.05,42,0.9501199312898816,219,7,,,,additive,tahini,PLS scores,inner_basis
+poly,4,0.0001,0.05,42,0.9817054507420646,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,6,0.0001,0.05,42,0.9766388802475613,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,8,0.0001,0.05,42,0.9686628003679096,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,4,0.0001,0.05,42,0.97514239573698,171,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,6,0.0001,0.05,42,0.970615641063982,219,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,8,0.0001,0.05,42,0.9691744757172374,267,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,4,0.0001,0.05,42,0.9730734416245621,234,6,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,6,0.0001,0.05,42,0.9759306350454092,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,8,0.0001,0.05,42,0.9821013675103645,366,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,4,0.0001,0.05,42,0.9815628150339747,123,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,6,0.0001,0.05,42,0.9866987779468234,171,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,8,0.0001,0.05,42,0.9856647638209096,219,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,4,0.0001,0.05,42,0.9908962595301671,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,6,0.0001,0.05,42,0.9885151256366019,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,8,0.0001,0.05,42,0.9845321617824843,300,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,4,0.0001,0.05,42,0.8997202824067952,123,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,6,0.0001,0.05,42,0.9239707741489691,171,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,8,0.0001,0.05,42,0.9361597684753521,219,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,4,0.0001,0.05,42,0.9152245661027689,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,6,0.0001,0.05,42,0.8736163563790926,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,8,0.0001,0.05,42,0.8903147497915859,300,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,4,0.0001,0.05,42,0.9897239429151958,123,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,6,0.0001,0.05,42,0.9850655264057606,171,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,8,0.0001,0.05,42,0.9845693363977646,219,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,4,0.0001,0.05,42,0.9872082681919544,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,6,0.0001,0.05,42,0.9893650942653283,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,8,0.0001,0.05,42,0.978834779482972,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,4,0.0001,0.05,42,0.9591517534469949,123,8,,,,additive,tahini,PLS scores,inner_basis
+poly,6,0.0001,0.05,42,0.962137999244154,171,8,,,,additive,tahini,PLS scores,inner_basis
+poly,8,0.0001,0.05,42,0.9731486385985151,219,7,,,,additive,tahini,PLS scores,inner_basis
+poly,4,0.0001,0.05,42,0.9847592119184679,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,6,0.0001,0.05,42,0.9893522181518167,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,8,0.0001,0.05,42,0.9850092132884912,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,4,0.0001,0.05,42,0.9828190548991913,171,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,6,0.0001,0.05,42,0.9773823042465567,219,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,8,0.0001,0.05,42,0.9778622636833574,267,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,4,0.0001,0.05,42,0.9589829238989902,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,6,0.0001,0.05,42,0.9886553555590889,300,6,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,8,0.0001,0.05,42,0.9928328301947889,366,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,4,0.0001,0.05,42,0.9637592954545201,123,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,6,0.0001,0.05,42,0.9576322202804235,171,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,8,0.0001,0.05,42,0.9477001498017779,219,7,,,,additive,tahini,PLS scores,inner_basis
+cheby,4,0.0001,0.05,42,0.9698525654601354,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,6,0.0001,0.05,42,0.851650846222721,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,8,0.0001,0.05,42,0.7609222977256689,300,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,4,0.0001,0.05,42,0.7078045799789541,123,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,6,0.0001,0.05,42,0.7801422666950941,171,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,8,0.0001,0.05,42,0.7795375858945003,219,7,,,,additive,tahini,PLS scores,inner_basis
+fourier,4,0.0001,0.05,42,0.4885850959733069,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,6,0.0001,0.05,42,0.845579858039061,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+fourier,8,0.0001,0.05,42,0.7513322396206104,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,4,0.0001,0.05,42,0.9464392510534082,123,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,6,0.0001,0.05,42,0.9638205216538113,171,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,8,0.0001,0.05,42,0.957473630547524,219,7,,,,additive,tahini,PLS scores,inner_basis
+rbf,4,0.0001,0.05,42,0.9626554138637495,168,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,6,0.0001,0.05,42,0.9700700147569324,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+rbf,8,0.0001,0.05,42,0.9748110693355226,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,4,0.0001,0.05,42,0.9787258914010663,123,8,,,,additive,tahini,PLS scores,inner_basis
+poly,6,0.0001,0.05,42,0.9729529261799462,171,8,,,,additive,tahini,PLS scores,inner_basis
+poly,8,0.0001,0.05,42,0.9696180591011049,219,7,,,,additive,tahini,PLS scores,inner_basis
+poly,4,0.0001,0.05,42,0.9726449923565473,168,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,6,0.0001,0.05,42,0.9719954884916484,234,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+poly,8,0.0001,0.05,42,0.9665317842907436,300,8,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,4,0.0001,0.05,42,0.9483661276662707,171,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,6,0.0001,0.05,42,0.9576969231933569,219,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,8,0.0001,0.05,42,0.9555023390699316,267,7,,,,additive,tahini,PLS scores,inner_basis
+bspline,4,0.0001,0.05,42,0.9750693617003783,234,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,6,0.0001,0.05,42,0.9566544135496908,300,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+bspline,8,0.0001,0.05,42,0.8761895260016029,366,7,,,,1 hidden layer,tahini,PLS scores,inner_basis
+cheby,4,1e-05,0.0,42,0.9782262742470409,168,8,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.05,42,0.9858647192180324,168,7,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.15,42,0.98648639202004,168,6,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.001,0.05,42,0.9838805056156825,168,7,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.001,0.15,42,0.9831822985545733,168,6,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,1e-05,0.0,42,0.9935218917097998,168,8,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.05,42,0.9908962595301671,168,7,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.15,42,0.992822056139103,168,6,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.001,0.05,42,0.9882306060073187,168,7,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.001,0.15,42,0.9930206698349553,168,6,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,1e-05,0.0,42,0.9579135377470829,168,8,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.05,42,0.9698525654601354,168,7,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.15,42,0.9418001811981966,168,5,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.001,0.05,42,0.9659019477956391,168,7,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.001,0.15,42,0.9308778227997406,168,5,,,,1 hidden layer,tahini,PLS scores,inner_reg
+cheby,4,0.0001,0.05,42,0.958289164223221,123,8,,,,additive,tahini,selected bands,inner_basis
+cheby,6,0.0001,0.05,42,0.9684812275192534,171,8,,,,additive,tahini,selected bands,inner_basis
+cheby,8,0.0001,0.05,42,0.9642723791154345,219,8,,,,additive,tahini,selected bands,inner_basis
+cheby,4,0.0001,0.05,42,0.695374735445069,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,6,0.0001,0.05,42,0.9732148015105181,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,8,0.0001,0.05,42,0.9640206151870437,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,4,0.0001,0.05,42,0.8698067622938828,123,8,,,,additive,tahini,selected bands,inner_basis
+fourier,6,0.0001,0.05,42,0.8993514369250031,171,8,,,,additive,tahini,selected bands,inner_basis
+fourier,8,0.0001,0.05,42,0.8996027670220326,219,8,,,,additive,tahini,selected bands,inner_basis
+fourier,4,0.0001,0.05,42,0.8756552764548953,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,6,0.0001,0.05,42,0.5929039718704594,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,8,0.0001,0.05,42,0.6527239802273919,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,4,0.0001,0.05,42,0.9656041783447618,123,8,,,,additive,tahini,selected bands,inner_basis
+rbf,6,0.0001,0.05,42,0.9734356431519318,171,7,,,,additive,tahini,selected bands,inner_basis
+rbf,8,0.0001,0.05,42,0.971243614947826,219,7,,,,additive,tahini,selected bands,inner_basis
+rbf,4,0.0001,0.05,42,0.9828379097907363,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,6,0.0001,0.05,42,0.976876455274882,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,8,0.0001,0.05,42,0.949534687988064,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,4,0.0001,0.05,42,0.9428395128088403,123,8,,,,additive,tahini,selected bands,inner_basis
+poly,6,0.0001,0.05,42,0.9490196105351157,171,8,,,,additive,tahini,selected bands,inner_basis
+poly,8,0.0001,0.05,42,0.9475942715157673,219,8,,,,additive,tahini,selected bands,inner_basis
+poly,4,0.0001,0.05,42,0.9886460890525725,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,6,0.0001,0.05,42,0.9884101518024174,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,8,0.0001,0.05,42,0.9862317766199632,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,4,0.0001,0.05,42,0.9618436678386473,171,8,,,,additive,tahini,selected bands,inner_basis
+bspline,6,0.0001,0.05,42,0.9665793720684676,219,8,,,,additive,tahini,selected bands,inner_basis
+bspline,8,0.0001,0.05,42,0.9659378017664462,267,8,,,,additive,tahini,selected bands,inner_basis
+bspline,4,0.0001,0.05,42,0.9759038635170958,234,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,6,0.0001,0.05,42,0.869177770309124,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,8,0.0001,0.05,42,0.9267681980140473,366,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,4,0.0001,0.05,42,0.964604452943513,123,8,,,,additive,tahini,selected bands,inner_basis
+cheby,6,0.0001,0.05,42,0.9649012101131521,171,8,,,,additive,tahini,selected bands,inner_basis
+cheby,8,0.0001,0.05,42,0.963932287797274,219,8,,,,additive,tahini,selected bands,inner_basis
+cheby,4,0.0001,0.05,42,0.9826710834407716,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,6,0.0001,0.05,42,0.9815366255200793,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,8,0.0001,0.05,42,0.968638831822057,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,4,0.0001,0.05,42,0.9339371009995356,123,8,,,,additive,tahini,selected bands,inner_basis
+fourier,6,0.0001,0.05,42,0.9362329237247656,171,8,,,,additive,tahini,selected bands,inner_basis
+fourier,8,0.0001,0.05,42,0.9251334133191168,219,8,,,,additive,tahini,selected bands,inner_basis
+fourier,4,0.0001,0.05,42,0.939439134502099,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,6,0.0001,0.05,42,0.9303553012116067,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,8,0.0001,0.05,42,0.9525998756973535,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,4,0.0001,0.05,42,0.9691318238905536,123,8,,,,additive,tahini,selected bands,inner_basis
+rbf,6,0.0001,0.05,42,0.9721859582531672,171,8,,,,additive,tahini,selected bands,inner_basis
+rbf,8,0.0001,0.05,42,0.9689893021951458,219,8,,,,additive,tahini,selected bands,inner_basis
+rbf,4,0.0001,0.05,42,0.9487548264593293,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,6,0.0001,0.05,42,0.9784428923344006,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,8,0.0001,0.05,42,0.9826050669014323,300,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,4,0.0001,0.05,42,0.97079164362689,123,8,,,,additive,tahini,selected bands,inner_basis
+poly,6,0.0001,0.05,42,0.9742711493795374,171,8,,,,additive,tahini,selected bands,inner_basis
+poly,8,0.0001,0.05,42,0.9701012141741147,219,8,,,,additive,tahini,selected bands,inner_basis
+poly,4,0.0001,0.05,42,0.9866095580125038,168,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,6,0.0001,0.05,42,0.9862818186149066,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,8,0.0001,0.05,42,0.9838033472527128,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,4,0.0001,0.05,42,0.9653486853990765,171,8,,,,additive,tahini,selected bands,inner_basis
+bspline,6,0.0001,0.05,42,0.9698086345846127,219,8,,,,additive,tahini,selected bands,inner_basis
+bspline,8,0.0001,0.05,42,0.9629601092979667,267,8,,,,additive,tahini,selected bands,inner_basis
+bspline,4,0.0001,0.05,42,0.9845002737820684,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,6,0.0001,0.05,42,0.9817424901541704,300,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,8,0.0001,0.05,42,0.9819397946843968,366,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,4,0.0001,0.05,42,0.9490018491247558,123,8,,,,additive,tahini,selected bands,inner_basis
+cheby,6,0.0001,0.05,42,0.9608913142284327,171,8,,,,additive,tahini,selected bands,inner_basis
+cheby,8,0.0001,0.05,42,0.9576014154535921,219,8,,,,additive,tahini,selected bands,inner_basis
+cheby,4,0.0001,0.05,42,0.9592646447659877,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,6,0.0001,0.05,42,0.9411884073015172,234,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+cheby,8,0.0001,0.05,42,0.9704903763198166,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,4,0.0001,0.05,42,0.8917514785362886,123,8,,,,additive,tahini,selected bands,inner_basis
+fourier,6,0.0001,0.05,42,0.932177851318392,171,8,,,,additive,tahini,selected bands,inner_basis
+fourier,8,0.0001,0.05,42,0.9230242137289717,219,8,,,,additive,tahini,selected bands,inner_basis
+fourier,4,0.0001,0.05,42,0.9374060978359295,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,6,0.0001,0.05,42,0.8653436549095875,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+fourier,8,0.0001,0.05,42,0.7404146777776808,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,4,0.0001,0.05,42,0.95821622370351,123,8,,,,additive,tahini,selected bands,inner_basis
+rbf,6,0.0001,0.05,42,0.9618784369593828,171,8,,,,additive,tahini,selected bands,inner_basis
+rbf,8,0.0001,0.05,42,0.9602525431431636,219,8,,,,additive,tahini,selected bands,inner_basis
+rbf,4,0.0001,0.05,42,0.9784176019477971,168,7,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,6,0.0001,0.05,42,0.9570160343102013,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+rbf,8,0.0001,0.05,42,0.9645334314261925,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,4,0.0001,0.05,42,0.9680004423039917,123,8,,,,additive,tahini,selected bands,inner_basis
+poly,6,0.0001,0.05,42,0.9684670807375657,171,8,,,,additive,tahini,selected bands,inner_basis
+poly,8,0.0001,0.05,42,0.9659846512110647,219,8,,,,additive,tahini,selected bands,inner_basis
+poly,4,0.0001,0.05,42,0.9870738802284051,168,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,6,0.0001,0.05,42,0.9691513142178729,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,8,0.0001,0.05,42,0.9821581333528469,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,4,0.0001,0.05,42,0.9534232936652981,171,8,,,,additive,tahini,selected bands,inner_basis
+bspline,6,0.0001,0.05,42,0.9590195039871072,219,8,,,,additive,tahini,selected bands,inner_basis
+bspline,8,0.0001,0.05,42,0.9581947042624583,267,8,,,,additive,tahini,selected bands,inner_basis
+bspline,4,0.0001,0.05,42,0.9667669234657991,234,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,6,0.0001,0.05,42,0.9627376106380413,300,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+bspline,8,0.0001,0.05,42,0.8934602564503185,366,8,,,,1 hidden layer,tahini,selected bands,inner_basis
+poly,4,1e-05,0.0,42,0.9854894392700122,168,8,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.0001,0.05,42,0.9886460890525725,168,8,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.0001,0.15,42,0.9870511805733775,168,7,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.001,0.05,42,0.9838476517362316,168,7,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.001,0.15,42,0.9797282753541313,168,6,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,1e-05,0.0,42,0.9854856919254682,168,8,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.0001,0.05,42,0.9866095580125038,168,7,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.0001,0.15,42,0.9853001837853396,168,6,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.001,0.05,42,0.9862741972199613,168,6,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.001,0.15,42,0.9783043001149059,168,5,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,1e-05,0.0,42,0.9764095662100851,168,8,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.0001,0.05,42,0.9870738802284051,168,8,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.0001,0.15,42,0.9867806137731415,168,6,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.001,0.05,42,0.9552983929554585,168,7,,,,1 hidden layer,tahini,selected bands,inner_reg
+poly,4,0.001,0.15,42,0.9533996651048637,168,5,,,,1 hidden layer,tahini,selected bands,inner_reg

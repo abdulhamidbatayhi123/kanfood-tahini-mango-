@@ -1,0 +1,6 @@
+Comparison,diff,p_corrected,p_holm,sig_holm
+KAN vs PLS,-0.0143,0.3428,1.0,False
+KAN vs SVM,0.0177,0.4628,1.0,False
+KAN vs RF,0.0355,0.0085,0.0423,True
+KAN vs MLP,-0.0247,0.1203,0.4814,False
+KAN vs CNN,0.0025,0.8444,1.0,False

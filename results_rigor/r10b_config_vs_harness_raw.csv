@@ -1,0 +1,91 @@
+dataset,architecture,configuration,harness,config,seed,n_params,updates_used,external_R2,seconds
+tahini,KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",42,684,300,0.9868780552987652,40.6
+tahini,KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",7,684,300,0.9755558154895316,16.8
+tahini,KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",2024,684,300,0.9880019728106907,20.5
+tahini,KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",100,684,300,0.9919328005230563,44.1
+tahini,KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",13,684,300,0.9872759026728803,60.4
+tahini,KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",42,684,1700,0.9897246442295303,373.8
+tahini,KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",7,684,3200,0.9896389946104469,366.5
+tahini,KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",2024,684,1700,0.9754620761138029,221.6
+tahini,KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",100,684,1000,0.8933402151614246,49.5
+tahini,KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",13,684,1400,0.9785829554274053,193.6
+tahini,KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",42,684,300,0.98540559426993,33.7
+tahini,KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",7,684,300,0.9602783257324257,30.3
+tahini,KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",2024,684,300,0.9751405607491999,29.4
+tahini,KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",100,684,300,0.9782369104657939,32.1
+tahini,KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",13,684,300,0.9733862654568249,30.4
+tahini,KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",42,684,1000,0.9702345973575102,119.3
+tahini,KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",7,684,2000,0.9901082485918057,215.9
+tahini,KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",2024,684,3200,0.9841322326261113,281.0
+tahini,KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",100,684,1100,0.9098536868532603,58.3
+tahini,KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 4, ""lamb"": 0.001}",13,684,2400,0.9906234800896279,143.7
+tahini,MLP,inner-CV selected,published recipe,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",42,689,3600,0.9872504506774873,49.0
+tahini,MLP,inner-CV selected,published recipe,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",7,689,3600,0.9895698629170167,60.2
+tahini,MLP,inner-CV selected,published recipe,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",2024,689,3600,0.985809434263052,62.1
+tahini,MLP,inner-CV selected,published recipe,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",100,689,3600,0.982296941274489,87.3
+tahini,MLP,inner-CV selected,published recipe,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",13,689,3600,0.9871578454400345,38.4
+tahini,MLP,inner-CV selected,convergence harness,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",42,689,1200,0.9874418321353808,24.2
+tahini,MLP,inner-CV selected,convergence harness,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",7,689,1600,0.9855979949190823,20.6
+tahini,MLP,inner-CV selected,convergence harness,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",2024,689,3500,0.9874213394189192,46.4
+tahini,MLP,inner-CV selected,convergence harness,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",100,689,3300,0.9941107841970229,39.0
+tahini,MLP,inner-CV selected,convergence harness,"{""lr"": 0.003, ""wd"": 0.0001, ""dropout"": 0.1}",13,689,1400,0.988998576530385,24.7
+mango (accuracy KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",42,8996,300,0.8628663836449602,48.7
+mango (accuracy KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",7,8996,300,0.8723379651256746,57.9
+mango (accuracy KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",2024,8996,300,0.8504243008363839,65.9
+mango (accuracy KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",100,8996,300,0.8636061205434196,163.7
+mango (accuracy KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",13,8996,300,0.8584041987493187,205.8
+mango (accuracy KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",42,8996,1100,0.843351190647594,929.7
+mango (accuracy KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",7,8996,1600,0.8768212251068317,1956.8
+mango (accuracy KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",2024,8996,1100,0.87617921629108,1069.3
+mango (accuracy KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",100,8996,900,0.8578626334010894,686.7
+mango (accuracy KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",13,8996,1400,0.8397965347544141,1267.3
+mango (accuracy KAN),KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",42,8996,300,0.8517319503479881,137.6
+mango (accuracy KAN),KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",7,8996,300,0.8753778149980804,366.4
+mango (accuracy KAN),KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",2024,8996,300,0.8735377566847636,278.4
+mango (accuracy KAN),KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",100,8996,300,0.8736326152509266,341.0
+mango (accuracy KAN),KAN,inner-CV selected,published recipe,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",13,8996,300,0.8905642031050687,290.5
+mango (accuracy KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",42,8996,1900,0.8820743902382073,1958.3
+mango (accuracy KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",7,8996,1600,0.8875975604134169,759.4
+mango (accuracy KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",2024,8996,1100,0.8771829410280381,798.9
+mango (accuracy KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",100,8996,900,0.8446847350207329,547.4
+mango (accuracy KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 3, ""k"": 3, ""lamb"": 0.001}",13,8996,1700,0.8730336147238639,887.9
+mango (accuracy KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",42,8989,32200,0.8988545765027798,3311.6
+mango (accuracy KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",7,8989,32200,0.9021527597359825,3914.6
+mango (accuracy KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",2024,8989,32200,0.9000824859855486,3904.2
+mango (accuracy KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",100,8989,32200,0.8839900720085151,1722.7
+mango (accuracy KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",13,8989,32200,0.8993624562972752,506.0
+mango (accuracy KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",42,8989,2900,0.8928597149180626,22.0
+mango (accuracy KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",7,8989,1600,0.8799338538302196,9.0
+mango (accuracy KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",2024,8989,1300,0.8921434241715538,8.9
+mango (accuracy KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",100,8989,1100,0.8631660417226867,25.6
+mango (accuracy KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",13,8989,1000,0.851478431600077,16.0
+mango (compact KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",42,820,300,0.8178532897934593,11.9
+mango (compact KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",7,820,300,0.8196841707600766,12.3
+mango (compact KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",2024,820,300,0.8485072179869377,12.4
+mango (compact KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",100,820,300,0.825993864562931,16.8
+mango (compact KAN),KAN,published config,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",13,820,300,0.8211361651891415,16.9
+mango (compact KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",42,820,2400,0.8344542047600165,118.0
+mango (compact KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",7,820,1100,0.8343857980320852,67.5
+mango (compact KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",2024,820,1600,0.859100569134585,86.6
+mango (compact KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",100,820,1100,0.8359714383551237,70.2
+mango (compact KAN),KAN,published config,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.001}",13,820,1400,0.8161458638003406,93.5
+mango (compact KAN),KAN,inner-CV selected,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",42,820,300,0.8128016615344801,18.3
+mango (compact KAN),KAN,inner-CV selected,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",7,820,300,0.7836570683088494,12.2
+mango (compact KAN),KAN,inner-CV selected,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",2024,820,300,0.8392509787686264,11.7
+mango (compact KAN),KAN,inner-CV selected,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",100,820,300,0.8072705156773066,15.8
+mango (compact KAN),KAN,inner-CV selected,published recipe,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",13,820,300,0.8154942732233689,22.6
+mango (compact KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",42,820,2400,0.8420152378105072,157.4
+mango (compact KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",7,820,1900,0.843086017603214,88.8
+mango (compact KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",2024,820,1400,0.8441307606439578,60.0
+mango (compact KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",100,820,1000,0.8177781616752762,50.2
+mango (compact KAN),KAN,inner-CV selected,convergence harness,"{""grid"": 5, ""k"": 3, ""lamb"": 0.01}",13,820,1300,0.808462648050762,63.4
+mango (compact KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",42,817,32200,0.8807741614933786,249.7
+mango (compact KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",7,817,32200,0.8747603757288345,258.5
+mango (compact KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",2024,817,32200,0.8706212681630995,232.3
+mango (compact KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",100,817,32200,0.8689918723219381,227.1
+mango (compact KAN),MLP,inner-CV selected,published recipe,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",13,817,32200,0.8707432228000436,192.7
+mango (compact KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",42,817,2600,0.8809128080093136,34.0
+mango (compact KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",7,817,2500,0.8781248798430971,12.2
+mango (compact KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",2024,817,2400,0.8729374920478417,11.6
+mango (compact KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",100,817,3300,0.8814110705210697,16.7
+mango (compact KAN),MLP,inner-CV selected,convergence harness,"{""lr"": 0.001, ""wd"": 0.001, ""dropout"": 0.1}",13,817,2400,0.862487834339598,12.6

@@ -1,0 +1,22 @@
+dataset,representation,model,seed,R2,seconds,expression
+tahini,PLS scores,EBM,42,0.9805898131185176,67.6,
+tahini,PLS scores,EBM,7,0.9798917079792878,59.4,
+tahini,PLS scores,EBM,2024,0.9799601108625318,74.7,
+tahini,PLS scores,EBM+int,42,0.9888313376049909,787.0,
+tahini,PLS scores,EBM+int,7,0.9870161944172188,496.5,
+tahini,PLS scores,EBM+int,2024,0.9871158797739346,661.1,
+tahini,PLS scores,GAM,42,0.9823381181581812,3.1,
+tahini,PLS scores,GAM,7,0.9823381181581812,2.7,
+tahini,PLS scores,GAM,2024,0.9823381181581812,2.5,
+tahini,PLS scores,XGBoost,42,0.9479101679802521,4.2,
+tahini,PLS scores,XGBoost,7,0.9496370311678641,2.6,
+tahini,PLS scores,XGBoost,2024,0.9507110009832257,2.6,
+tahini,PLS scores,spline-MLP,42,0.99402417046776,210.5,
+tahini,PLS scores,spline-MLP,7,0.9929052451481809,251.0,
+tahini,PLS scores,spline-MLP,2024,0.9934998956579347,256.3,
+tahini,PLS scores,MLP(ref),42,0.9879849832597676,42.4,
+tahini,PLS scores,MLP(ref),7,0.9915773869312112,50.3,
+tahini,PLS scores,MLP(ref),2024,0.9854979419155031,40.9,
+tahini,PLS scores,SR (gplearn),42,0.22511470741333117,155.8,"mul(log(mul(add(add(add(add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), sqrt(add(X2, X0))), div(mul(sqrt(X1), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), X6), X6), mul(X7, X7)), div(-0.337, 0.549)), add(X0, X6)), add(mul(log(mul(add(add(add(add(sqrt(mul(X5, div(mul(sub(add(add(X2, X0), add(X2, X2)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X6), sqrt(X1)), add(div(mul(sqrt(X6), sqrt(X1)), add(mul(sqrt(X6), div(mul(sqrt(X6), add(sqrt(X1), sin(X5))), div(mul(sqrt(X6), div(mul(sqrt(X6), sqrt(add(X6, X1))), add(add(X2, X0), sqrt(add(X2, X0))))), add(add(X2, X0), add(X2, X2))))), add(X2, X2))), add(X2, X2)))))), X6), mul(X7, X7)), div(-0.337, 0.549)), add(X0, X6)), add(mul(X7, X2), mul(X5, X0)))), add(sqrt(add(sqrt(X4), log(div(mul(sub(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(add(X0, X5), X1)), add(sqrt(X1), mul(add(log(X1), mul(X7, X7)), add(add(sqrt(mul(X5, div(mul(sub(add(mul(X7, X2), mul(X5, X0)), mul(sqrt(X6), sqrt(X1))), add(X2, X2)), div(sqrt(X1), add(add(X2, X0), add(X2, X2)))))), X6), mul(X7, X7))))), div(mul(sqrt(X6), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(X2, add(add(X2, X0), add(X2, X2))))))), log(div(mul(sub(add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X1), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), X6), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(add(X2, X0)), sqrt(X1)), add(add(X2, X0), add(X2, X2))))))), X0))), add(sqrt(add(sqrt(X4), log(div(mul(sub(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(add(X0, X5), X1)), add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X1), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), X6), sin(X5))), div(mul(sqrt(X6), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(X2, add(add(X2, X0), add(X2, X2))))))), log(div(mul(sub(add(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(X1, X1)), add(X1, X1)), div(mul(mul(X2, sqrt(X1)), sqrt(X1)), add(add(X2, X2), add(X2, X2)))))), X6), mul(X7, X7)), add(X1, X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(add(X2, X0)), sqrt(X1)), add(add(X2, X0), add(add(X2, sub(add(sqrt(mul(X5, div(mul(sub(div(X5, X5), add(add(X0, X5), X1)), add(sqrt(X1), sin(X5))), div(mul(sqrt(X6), sqrt(X1)), add(add(X2, X0), add(X2, X2)))))), mul(X7, X7)), add(X1, X1))), X2)))))))"
+tahini,PLS scores,SR (gplearn),7,0.8639466034820682,89.4,"add(sub(X3, X1), div(log(sqrt(add(sub(X6, X1), sub(add(add(mul(sub(X3, 0.399), sqrt(X7)), X0), div(sqrt(log(div(sqrt(log(div(sqrt(X7), sin(0.027)))), sin(0.027)))), sin(0.027))), sin(0.027))))), sin(0.027)))"
+tahini,PLS scores,SR (gplearn),2024,0.38036739541131914,98.0,"div(add(sqrt(log(add(div(div(add(sqrt(add(sqrt(log(div(X2, X7))), X7)), sin(X7)), 0.069), log(X3)), X3))), add(add(sqrt(add(add(X7, sqrt(sqrt(X5))), X6)), div(-0.369, sqrt(log(log(add(div(div(add(sqrt(add(sqrt(log(div(div(X2, div(X2, X7)), -0.032))), X7)), div(sin(X7), X7)), 0.069), log(X3)), X3)))))), sqrt(X5))), 0.069)"

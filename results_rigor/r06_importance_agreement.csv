@@ -1,0 +1,3 @@
+dataset,n_components,rho_intrinsic_vs_permutation,rho_intrinsic_vs_SHAP,rho_permutation_vs_SHAP,shap_background,shap_eval
+tahini,8,0.8571428571428572,0.7619047619047621,0.9285714285714287,100,300
+mango,12,0.8873459471570384,0.8531468531468532,0.8873459471570384,100,300

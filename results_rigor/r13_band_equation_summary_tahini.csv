@@ -1,0 +1,37 @@
+dataset,stage,model,method,k,R2_mean,R2_sd,terms_median,vars_median,fidelity_mean
+tahini,external,EBM,vip,12,0.9844357621038651,0.00017404328403364057,,12.0,
+tahini,external,EBM,vip,16,0.9884061723286888,0.0003215529023704904,,16.0,
+tahini,external,EBM+int,vip,12,0.9867555445075249,0.00043983934109159716,,12.0,
+tahini,external,EBM+int,vip,16,0.9891156271229848,0.00045897025116042515,,16.0,
+tahini,external,GAM,vip,12,0.9853826612311538,0.0,,12.0,
+tahini,external,GAM,vip,16,0.9924071969479324,0.0,,16.0,
+tahini,external,"KAN (2,) equation",vip,12,0.9827692290586119,0.003451423880732764,20.5,10.0,0.9253808408975601
+tahini,external,"KAN (2,) equation",vip,16,0.9503437565851944,0.05840263803324236,21.0,14.0,0.9241321444511413
+tahini,external,"KAN (2,) spline",vip,12,0.9775876231550085,0.013228483535369503,,12.0,
+tahini,external,"KAN (2,) spline",vip,16,0.9454766032180894,0.057066516727856065,,16.0,
+tahini,external,"KAN (3,) equation",vip,12,0.9812459683161858,0.011175907291472892,20.0,10.0,0.8928010702133179
+tahini,external,"KAN (3,) equation",vip,16,0.9033962591051463,0.18359532197346212,26.0,13.0,0.8454133152961731
+tahini,external,"KAN (3,) spline",vip,12,0.9768789819921437,0.01688470959755233,,12.0,
+tahini,external,"KAN (3,) spline",vip,16,0.985968774863772,0.0053651005110682696,,16.0,
+tahini,external,KAN additive equation,vip,12,0.9887707283376829,0.0011067047342506811,10.0,8.0,0.9923527359962463
+tahini,external,KAN additive equation,vip,16,0.9894600290080495,0.000900909687111521,7.0,6.0,0.9936208128929138
+tahini,external,KAN additive spline,vip,12,0.985596085896708,0.000927657242986228,,12.0,
+tahini,external,KAN additive spline,vip,16,0.9903844108888741,0.0012528878263969056,,16.0,
+tahini,external,OLS,vip,12,0.9910142170411709,0.0,,12.0,
+tahini,external,OLS,vip,16,0.9922684162325119,0.0,,16.0,
+tahini,external,PLS,vip,12,0.9910148231424971,0.0,,12.0,
+tahini,external,PLS,vip,16,0.9917630481575536,0.0,,16.0,
+tahini,external,Ridge,vip,12,0.9910416827822306,0.0,,12.0,
+tahini,external,Ridge,vip,16,0.992293661909064,0.0,,16.0,
+tahini,external_anchored,EBM,anchored,8,0.9559857903091211,0.0010727197746745105,,8.0,
+tahini,external_anchored,EBM+int,anchored,8,0.9608294886826603,0.0011629176820273323,,8.0,
+tahini,external_anchored,GAM,anchored,8,0.9607196615426787,0.0,,8.0,
+tahini,external_anchored,"KAN (2,) equation",anchored,8,0.9278897120016035,0.02568235155577061,12.0,7.0,0.9111855149269104
+tahini,external_anchored,"KAN (2,) spline",anchored,8,0.9375054728698211,0.02158219889142823,,8.0,
+tahini,external_anchored,"KAN (3,) equation",anchored,8,0.9263357926370324,0.026368524689555452,17.0,7.0,0.9483544945716857
+tahini,external_anchored,"KAN (3,) spline",anchored,8,0.9449071984241326,0.009768192095012205,,8.0,
+tahini,external_anchored,KAN additive equation,anchored,8,0.9162223182477474,0.03144753654261693,11.0,7.0,0.9209670305252076
+tahini,external_anchored,KAN additive spline,anchored,8,0.9549489278253253,0.0016278970669684502,,8.0,
+tahini,external_anchored,OLS,anchored,8,0.9359686709774333,0.0,,8.0,
+tahini,external_anchored,PLS,anchored,8,0.9359686709774333,0.0,,8.0,
+tahini,external_anchored,Ridge,anchored,8,0.9358255787959046,0.0,,8.0,

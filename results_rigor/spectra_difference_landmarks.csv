@@ -1,0 +1,22 @@
+Kind,Feature,Nominal (cm-1),Channel (cm-1),Sunflower - tahini,Peanut - tahini,Channels
+band,cis =C-H stretch,3010,3010.67,0.00237,-0.00714,1
+band,CH3 asymmetric stretch,2962,2962.46,0.00061,-0.00378,1
+band,CH2 asymmetric stretch,2920,2920.03,-0.00485,0.02349,1
+band,CH2 symmetric stretch,2851,2850.59,-0.00396,0.0182,1
+band,ester C=O stretch,1745,1745.46,0.00144,0.00477,1
+band,CH2 scissoring,1465,1465.8,0.00044,0.00189,1
+band,C-O stretch,1105,1105.13,0.00583,-0.01019,1
+band,=C-H out-of-plane bend,989,989.41,0.01288,0.00049,1
+band,CH2 rocking,720,719.4,0.0067,-0.00511,1
+window mean,fingerprint below 1200,600-1200,—,0.00651,-0.00368,311
+window mean,C-H stretching region,2800-3050,—,-0.00015,0.00235,130
+window mean,CH2 asymmetric band,2900-2940,—,-0.00212,0.01269,21
+window mean,CH2 symmetric band,2840-2875,—,-0.0013,0.0077,18
+window mean,C-O envelope,1090-1180,—,0.00414,-0.00524,46
+"largest |difference|, sunflower",rank 1,—,599.82,0.01332,0.00045,1
+"largest |difference|, sunflower",rank 2,—,601.75,0.01319,0.00013,1
+"largest |difference|, sunflower",rank 3,—,603.68,0.0129,-0.00013,1
+"largest |difference|, peanut",rank 1,—,2920.03,-0.00485,0.02349,1
+"largest |difference|, peanut",rank 2,—,2921.95,-0.00468,0.02279,1
+"largest |difference|, peanut",rank 3,—,2918.1,-0.00461,0.02261,1
+sign agreement below 1200 (% of channels),sunflower positive / peanut negative,600-1200,—,100.0,95.5,311
