@@ -16,7 +16,7 @@ from kanfood.metrics import bootstrap_ci
 from paper1_rigor.bandlabels import MIR_ANNOT, NIR_ANNOT, annotate as _annotate
 from paper1_rigor.common import ROOT, tahini_split, mango_split
 from paper1_rigor.figstyle import (check_no_overlap, MODEL_COLOR, MODEL_ORDER, COL1, COL2, panel, save, tidy,
-                                   check_no_title)
+                                   check_no_title, check_legend_clear, mlabel, OPAQUE_LEGEND)
 
 P1 = ROOT / "results_phase1"
 PM = ROOT / "results_mango"
@@ -50,7 +50,7 @@ def fig_spectra(a1):
     tah, sun, pea = a1["mean_tahini"], a1["mean_sunflower"], a1["mean_peanut"]
 
     ax = tidy(axes[0, 0])
-    for v, lab, c in [(tah, "tahini (sesame paste)", "#7C3AED"),
+    for v, lab, c in [(tah, "tahini", "#7C3AED"),
                       (sun, "sunflower paste", "#D97706"),
                       (pea, "peanut paste", "#059669")]:
         ax.plot(wn, v, lw=1.0, color=c, label=lab)
@@ -58,42 +58,48 @@ def fig_spectra(a1):
     ax.set_ylabel("Absorbance (a.u.)")
     ax.set_xlabel("Wavenumber (cm$^{-1}$)")
     _annotate(ax, MIR_ANNOT)
-    ax.legend(loc="center left")
+    # The three spectra overlap almost everywhere and the band labels fill the top of the frame, so
+    # the legend sits above the frame, level with the panel letter (check_legend_clear enforces
+    # that it covers neither data nor labels).
+    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=3, handlelength=1.2,
+              columnspacing=1.0, borderaxespad=0.2)
     panel(ax, "a")
 
     ax = tidy(axes[0, 1])
-    ax.plot(wn, sun - tah, lw=1.0, color="#D97706", label="sunflower − tahini")
-    ax.plot(wn, pea - tah, lw=1.0, color="#059669", label="peanut − tahini")
-    ax.axhline(0, color="0.6", lw=0.6)
+    ax.plot(wn, sun - tah, lw=1.0, color="#D97706", label="sunflower")
+    ax.plot(wn, pea - tah, lw=1.0, color="#059669", label="peanut")
+    ax.axhline(0, color="0.6", lw=0.6, gid="guide")
     ax.set_xlim(wn.max(), wn.min())
-    ax.set_ylabel("Difference in absorbance (a.u.)")
+    ax.set_ylabel("Difference from tahini (a.u.)")
     ax.set_xlabel("Wavenumber (cm$^{-1}$)")
     _annotate(ax, MIR_ANNOT, labels=False)
-    ax.legend(loc="lower left")
+    # upper left: above the near-zero 4000-3300 cm-1 stretch and clear of the C-H peaks
+    ax.legend(loc="upper left", handlelength=1.4, **OPAQUE_LEGEND)
     panel(ax, "b")
 
     ax = tidy(axes[1, 0])
-    ax.plot(nm, mid_m, lw=1.2, color="#2563EB", label="all fruit (n = 11,691)")
+    # A single curve needs no legend; the number of spectra is given in the caption.
+    ax.plot(nm, mid_m, lw=1.2, color="#2563EB")
     ax.set_ylabel("Absorbance, log(1/R)")
     ax.set_xlabel("Wavelength (nm)")
     _annotate(ax, NIR_ANNOT, headroom=0.40)
-    ax.legend(loc="lower right")
     panel(ax, "c")
 
     ax = tidy(axes[1, 1])
     ax.plot(nm, hi_m - lo_m, lw=1.2, color="#DC2626",
             label="highest − lowest third of dry matter\n"
-                  f"(> {q[1]:.1f} % vs < {q[0]:.1f} %)")
-    ax.axhline(0, color="0.6", lw=0.6)
+                  f"(>{q[1]:.1f}% vs. <{q[0]:.1f}%)")
+    ax.axhline(0, color="0.6", lw=0.6, gid="guide")
     ax.set_ylabel("Difference in absorbance")
     ax.set_xlabel("Wavelength (nm)")
     _annotate(ax, NIR_ANNOT, labels=False)
-    ax.legend(loc="center right")
+    ax.legend(loc="center right", **OPAQUE_LEGEND)
     panel(ax, "d")
 
     fig.tight_layout()
     check_no_title(fig)
     check_no_overlap(fig)
+    check_legend_clear(fig)
     save(fig, "Figure_02_mean_spectra")
 
 
@@ -102,44 +108,53 @@ def fig_benchmark(d1, d2, f1, npar1, npar2):
     fig, axes = plt.subplots(2, 3, figsize=(COL2, 4.8))
     x = np.arange(len(MODEL_ORDER))
     cols = [MODEL_COLOR[m] for m in MODEL_ORDER]
+    labels = [mlabel(m) for m in MODEL_ORDER]
     w = 0.38
 
+    # R2 and F1 do not start at zero, so they are drawn as points with intervals rather than as
+    # bars, whose length would then encode nothing. Errors (b, e) start at zero and stay bars.
     for row, (d, ylab_r2, ylab_err, letters) in enumerate(
             [(d1, "Test $R^2$ (tahini %)", "Error (% tahini)", "ab"),
              (d2, "External-test $R^2$ (dry matter)", "Error (% dry matter)", "de")]):
         ax = tidy(axes[row, 0])
         v = d["R2"].to_numpy()
-        ax.bar(x, v, color=cols, yerr=[v - d["ci_lo"], d["ci_hi"] - v], capsize=2.5,
-               error_kw=dict(lw=0.8, ecolor="0.25"))
+        for xi, (vi, lo, hi, c) in enumerate(zip(v, d["ci_lo"], d["ci_hi"], cols)):
+            ax.errorbar(xi, vi, yerr=[[vi - lo], [hi - vi]], fmt="o", ms=5, color=c, ecolor=c,
+                        elinewidth=1.0, capsize=2.5)
         ax.set_ylim(0.60, 1.02)
+        ax.set_xlim(-0.6, len(x) - 0.4)
         ax.set_ylabel(ylab_r2)
-        ax.set_xticks(x); ax.set_xticklabels(MODEL_ORDER, rotation=45, ha="right")
+        ax.set_xticks(x); ax.set_xticklabels(labels, rotation=45, ha="right")
         panel(ax, letters[0])
 
         ax = tidy(axes[row, 1])
         ax.bar(x - w / 2, d["RMSEP"], w, color="#475569", label="RMSEP")
         ax.bar(x + w / 2, d["MAE"], w, color="#CBD5E1", label="MAE")
         ax.set_ylabel(ylab_err)
-        ax.set_xticks(x); ax.set_xticklabels(MODEL_ORDER, rotation=45, ha="right")
+        ax.set_xticks(x); ax.set_xticklabels(labels, rotation=45, ha="right")
         ax.set_ylim(0, ax.get_ylim()[1] * 1.30)
         ax.legend(loc="upper left", ncol=2)
         panel(ax, letters[1])
 
     ax = tidy(axes[0, 2])
-    ax.bar(x, [f1[m] for m in MODEL_ORDER], color=cols)
+    for xi, (m, c) in enumerate(zip(MODEL_ORDER, cols)):
+        ax.plot(xi, f1[m], "o", ms=5, color=c)
     ax.set_ylim(0.70, 1.03)
+    ax.set_xlim(-0.6, len(x) - 0.4)
     ax.set_ylabel("F1 (adulteration detection)")
-    ax.set_xticks(x); ax.set_xticklabels(MODEL_ORDER, rotation=45, ha="right")
+    ax.set_xticks(x); ax.set_xticklabels(labels, rotation=45, ha="right")
     panel(ax, "c")
 
     ax = tidy(axes[1, 2])
     p1 = np.array([npar1.get(m, np.nan) for m in MODEL_ORDER], dtype=float)
     p2 = np.array([npar2.get(m, np.nan) for m in MODEL_ORDER], dtype=float)
-    ax.bar(x - w / 2, np.nan_to_num(p1, nan=0), w, color="#7C3AED", label="tahini (FTIR)")
-    ax.bar(x + w / 2, np.nan_to_num(p2, nan=0), w, color="#C4B5FD", label="mango (NIR)")
+    ax.plot(x - 0.12, p1, "o", ms=5, color="#7C3AED", label="tahini (FTIR)", ls="none")
+    ax.plot(x + 0.12, p2, "s", ms=4.5, color="#C4B5FD", markeredgecolor="#7C3AED",
+            markeredgewidth=0.6, label="mango (NIR)", ls="none")
     ax.set_yscale("log"); ax.set_ylim(1e2, 3e5)
+    ax.set_xlim(-0.6, len(x) - 0.4)
     ax.set_ylabel("Trainable parameters")
-    ax.set_xticks(x); ax.set_xticklabels(MODEL_ORDER, rotation=45, ha="right")
+    ax.set_xticks(x); ax.set_xticklabels(labels, rotation=45, ha="right")
     ax.legend(loc="upper left", ncol=2)
     for xi, (va, vb) in enumerate(zip(p1, p2)):
         if np.isnan(va) and np.isnan(vb):
@@ -151,6 +166,7 @@ def fig_benchmark(d1, d2, f1, npar1, npar2):
     fig.tight_layout()
     check_no_title(fig)
     check_no_overlap(fig)
+    check_legend_clear(fig)
     save(fig, "Figure_03_benchmark")
 
 
@@ -174,10 +190,11 @@ def fig_parity(a, name, unit, lims, fignum, tag, tagsis=None):
         ax.set_xlim(*lims); ax.set_ylim(*lims)
         r2 = r2_score(y, p)
         rmse = float(np.sqrt(mean_squared_error(y, p)))
-        ax.text(0.04, 0.96, f"{m}\n$R^2$ = {r2:.3f}\nRMSEP = {rmse:.2f}", transform=ax.transAxes,
+        ax.text(0.04, 0.96, f"{mlabel(m)}\n$R^2$ = {r2:.3f}\nRMSEP = {rmse:.2f}", transform=ax.transAxes,
                 va="top", ha="left", fontsize=7.5)
         if i >= 3:
-            ax.set_xlabel(f"Measured {name} ({unit})")
+            # Tahini blends are gravimetric (nominal); mango dry matter is an oven-dried reference.
+            ax.set_xlabel(f"{'Nominal' if tag == 'tahini' else 'Reference'} {name} ({unit})")
         if i % 3 == 0:
             ax.set_ylabel(f"Predicted {name} ({unit})")
         panel(ax, "abcdef"[i])

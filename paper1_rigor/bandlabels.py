@@ -45,7 +45,7 @@ def annotate(ax, annot, headroom=0.55, labels=True, fontsize=5.5):
         if not inside:
             continue
         for p in inside:
-            ax.axvline(p, color="0.85", ls=":", lw=0.6, zorder=0)
+            ax.axvline(p, color="0.85", ls=":", lw=0.6, zorder=0, gid="guide")
         if labels:
             ax.text(float(np.mean(inside)), y0 + levels[shown % len(levels)] * (y1 - y0),
                     label, rotation=90, fontsize=fontsize, va="top", ha="center", color="0.40")

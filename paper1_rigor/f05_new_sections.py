@@ -26,7 +26,7 @@ from matplotlib.lines import Line2D
 
 from paper1_rigor.common import OUT
 from paper1_rigor.figstyle import (COL2, ACCENT, NEUTRAL, panel, save, tidy,
-                                   check_no_title, check_no_overlap, check_inside_axes)
+                                   check_no_title, check_no_overlap, check_inside_axes, signed)
 
 CONVERTED = "B-spline + corrected conversion"
 OLS = "OLS on the same inputs"
@@ -57,8 +57,8 @@ def fig_fidelity_under_shift():
                              gridspec_kw=dict(width_ratios=[1.0, 0.85, 1.35]))
 
     # (a), (b) fidelity of the printed equation to its own network, fold by fold
-    for k, (ds, xlab) in enumerate([("tahini", "withheld tahini lot"),
-                                    ("mango", "withheld mango season")]):
+    for k, (ds, xlab) in enumerate([("tahini", "Withheld tahini lot"),
+                                    ("mango", "Withheld mango season")]):
         ax = axes[k]
         g = raw[raw.dataset == ds]
         folds = sorted(g["held_out"].unique())
@@ -89,7 +89,7 @@ def fig_fidelity_under_shift():
         ax.set_xlabel(xlab)
         ax.set_ylim(0.55, 1.045)
         if k == 0:
-            ax.set_ylabel("fidelity of equation to network")
+            ax.set_ylabel("Fidelity of equation to network")
         else:
             ax.set_yticklabels([])
         tidy(ax)
@@ -97,10 +97,9 @@ def fig_fidelity_under_shift():
     # Inside panel (a) the legend covered the T4 point at fidelity 0.638 -- the single worst run
     # in the study and the one Section 3.5 quotes. Put it under the two panels instead, where
     # nothing is plotted.
+    # It is a figure legend rather than an axis legend: attached to panel (a), it widened that
+    # panel's layout box and left a wide empty gap between panels (a) and (b).
     h, l = axes[0].get_legend_handles_labels()
-    axes[0].legend(h, l, fontsize=6, ncol=2, columnspacing=0.8, handletextpad=0.2,
-                   loc="upper center", bbox_to_anchor=(1.02, -0.28), frameon=False,
-                   borderaxespad=0.0)
 
     # (c) what the infidelity costs: the printed equation minus the network it came from
     ax = axes[2]
@@ -128,7 +127,7 @@ def fig_fidelity_under_shift():
     ax.set_yticks(range(len(yticks)))
     ax.set_yticklabels(yticks, fontsize=7)
     ax.set_ylim(-0.6, len(yticks) - 0.4)
-    ax.set_xlabel(r"printed equation $-$ its network ($R^2$)")
+    ax.set_xlabel(r"Printed equation $-$ its network ($R^2$)")
     tidy(ax)
     panel(ax, "c")
 
@@ -142,7 +141,16 @@ def fig_fidelity_under_shift():
         assert abs(got - float(s["fidelity_mean"].iloc[0])) < 1e-9, \
             "panel (a) disagrees with r23_shift_summary.csv"
 
-    fig.tight_layout(w_pad=0.9)
+    fig.tight_layout(w_pad=0.9, rect=(0, 0.11, 1, 1))
+    # tight_layout gives every gap the width that panel (c)'s long tick labels need; panel (b)
+    # shares (a)'s axis and has no tick labels, so it is widened leftwards to close that gap.
+    p0, p1 = axes[0].get_position(), axes[1].get_position()
+    new_x0 = p0.x1 + 0.035
+    axes[1].set_position([new_x0, p1.y0, p1.x1 - new_x0, p1.height])
+    x0, x1 = axes[0].get_position().x0, axes[1].get_position().x1
+    fig.legend(h, l, fontsize=6, ncol=2, columnspacing=1.2, handletextpad=0.2,
+               loc="lower center", bbox_to_anchor=((x0 + x1) / 2, 0.0), frameon=False,
+               borderaxespad=0.0)
     check_no_title(fig); check_no_overlap(fig); check_inside_axes(fig)
     save(fig, "Figure_14_fidelity_under_shift")
 
@@ -194,8 +202,8 @@ def fig_transparency_frontier():
              "mango": _read("r19b_basis_inner_mango.csv")}
 
     # One row per model, ordered by class, with this paper's equation last inside its class.
-    rows = [(lab, cls, m) for m, cls, lab in YIELDS] + [("this paper's equation", 2, None)]
-    rows.sort(key=lambda r: (r[1], r[0] == "this paper's equation"))
+    rows = [(lab, cls, m) for m, cls, lab in YIELDS] + [("this paper’s equation", 2, None)]
+    rows.sort(key=lambda r: (r[1], r[0] == "this paper’s equation"))
     y = {r[0]: i for i, r in enumerate(rows)}
 
     datasets = [d for d in ("tahini", "mango") if (r14.dataset == d).any()]
@@ -223,7 +231,7 @@ def fig_transparency_frontier():
         band = [m for m in means if m > ref - 0.15]
         lo, hi = min(band) - 0.012, max(band) + 0.008
         for lab, (cls, mean, sd) in vals.items():
-            ours = lab == "this paper's equation"
+            ours = lab == "this paper’s equation"
             off = mean < lo
             ax.errorbar([lo if off else mean], [y[lab]], xerr=None if off else [sd],
                         fmt="<" if off else ("D" if ours else "o"),
@@ -232,7 +240,7 @@ def fig_transparency_frontier():
             # Values are right-aligned in a column at the axis edge rather than beside each
             # marker: next to the marker they sat on their own error bars and on the reference
             # line, which is the kind of thing only the rendered page shows.
-            ax.annotate(f"{mean:.3f}" if not off else f"{mean:.2f}",
+            ax.annotate(signed(mean, ".3f" if not off else ".2f"),
                         (1.0, y[lab]), xycoords=("axes fraction", "data"),
                         fontsize=6, ha="right", va="center",
                         xytext=(-2, 0), textcoords="offset points",
@@ -249,8 +257,8 @@ def fig_transparency_frontier():
         # can take. Keep the space, drop the impossible ticks.
         ax.set_xticks([t for t in ax.get_xticks()
                        if ax.get_xlim()[0] <= t <= min(ax.get_xlim()[1], 1.0)])
-        ax.set_xlabel(rf"external $R^2$ ({ds})")
-        for lbl, ours in zip(ax.get_yticklabels(), [r[0] == "this paper's equation" for r in rows]):
+        ax.set_xlabel(rf"External $R^2$ ({ds})")
+        for lbl, ours in zip(ax.get_yticklabels(), [r[0] == "this paper’s equation" for r in rows]):
             lbl.set_fontsize(7)
             if ours:
                 lbl.set_fontweight("bold")
@@ -267,7 +275,7 @@ def fig_transparency_frontier():
     v = r14[(r14.dataset == "tahini") & (r14.model == "spline-MLP")]["R2"]
     assert abs(v.mean() - 0.99347) < 5e-4, f"spline-MLP point drifted: {v.mean()}"
 
-    fig.tight_layout(w_pad=0.8, rect=(0, 0.11, 1, 1))
+    fig.tight_layout(w_pad=0.8, rect=(0, 0.085, 1, 1))
     # Below the panels rather than inside one: at this aspect ratio a legend placed in either
     # axis sat on top of the mango points.
     fig.legend(handles=handles, loc="lower center", ncol=2, fontsize=6, handletextpad=0.4,

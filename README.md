@@ -15,13 +15,17 @@ benchmark of Anderson et al., 2020).
 ## Summary of findings (as reported in the article)
 
 - **No accuracy advantage is claimed.** A parameter-matched MLP had the higher mean R² in all twelve configurations
-  compared; on withheld production lots no difference between the leading models was significant.
+  compared; paired by seed, the two were comparable in accuracy (significant in five mango configurations by a simple
+  paired t-test, in none after the Nadeau–Bengio correction). On withheld production lots no difference between the
+  leading models was significant.
 - **The contribution is the closed-form equation.** Most of the accuracy lost in converting a trained KAN to an
   equation is due to the conversion procedure; correcting it raised the median external R² of the tahini equation
   from 0.952 to 0.988. The conversion is not reproducible run to run, whereas a KAN whose edge functions are
-  expanded in an elementary basis (Chebyshev, powers, Gaussian) prints an equation identical to the network.
+  expanded in an elementary basis (Chebyshev, powers, Gaussian) prints an equation identical to the network up to
+  rounding; inputs are clipped to the training range before the network or the equation is evaluated.
 - **Screening, not confirmation.** With every authentic lot serving as the blank, detection limits were
-  8.9–21.6% adulterant; blends at 4–12% were not quantified.
+  8.9–21.6% adulterant; blends at 4–12% were not quantified, and authentic lots unlike the calibration set produced
+  false positives (per-lot rates in Table 5). The limits apply only to samples similar to the calibration population.
 
 ## Install
 
@@ -76,19 +80,19 @@ Data locations are configurable through environment variables (defaults are repo
 |---|---|
 | `kanfood/run_experiment.py` → `results_phase1/` | Table 2 (tahini benchmark) and the predictions used for the hold-out columns of Table 4 |
 | `kanfood/run_mango.py` → `results_mango/` | Table 3 (mango benchmark) |
-| `paper1_rigor/` → `results_rigor/` | Sections 3.3–3.6 and S1–S13 (below) |
-| `revision/` → `revision/results/` | Section S4 (nested rows of Table S3), Table 4 (out-of-fold columns) and Sections S14–S23 |
+| `paper1_rigor/` → `results_rigor/` | Sections 3.3–3.6, S1–S13, S24 and S25 (below) |
+| `revision/` → `revision/results/` | Section S4 (nested rows of Table S3), Table 4 (out-of-fold columns), Table 5 and Sections S14–S23 |
 
 Main analyses (`paper1_rigor/`, run as `python -m paper1_rigor.<module>` from the repository root):
 
 | Module | Article / Supplementary |
 |---|---|
 | `r05_lod_ci`, `r08_lod_cv` | Table 4 (hold-out detection limits and intervals), Section S13 |
-| `r12_extraction_protocol` | Table 5, Figure 4 (conversion protocols) |
-| `r19_basis_ablation`, `r19b_basis_mango`, `basis_kan` | Table 6, Figure 5 (exact elementary-basis route) |
-| `r13_band_equation`, `make_band_equation` | Section 3.4, Table 7, Figure 6, Equation (3) |
-| `r23_equation_under_shift` | Section 3.5, Table 8, Figure 7 |
-| `r14_glassbox_baselines`, `r11_equal_interpretability` | Section 3.6, Table 9, Figure 8 |
+| `r12_extraction_protocol` | Table 6, Figure 4 (conversion protocols) |
+| `r19_basis_ablation`, `r19b_basis_mango`, `basis_kan` | Table 7, Figure 5 (exact elementary-basis route) |
+| `r13_band_equation`, `make_band_equation` | Section 3.4, Table 8, Figure 6, Equation (3) |
+| `r23_equation_under_shift` | Section 3.5, Table 9, Figure 7 |
+| `r14_glassbox_baselines`, `r11_equal_interpretability` | Section 3.6, Table 10, Figure 8 |
 | `r09_adulterant_type` | Section S2, Table S1 |
 | `r07_robustness` | Section S3, Table S2 |
 | `r04_generalisation` | Section S4, frozen rows of Table S3 |
@@ -100,6 +104,8 @@ Main analyses (`paper1_rigor/`, run as `python -m paper1_rigor.<module>` from th
 | `band_assignments`, `f03_interpretability` | Section S10, Table S11, Figures S5–S7 |
 | `r06_shap`, `r15_attribution` | Section S11, Tables S12–S13, Figure S8 |
 | `r24_stats_new_comparisons` | Section S12, Tables S14–S15 |
+| `r42_parameter_matched_tests` | Section 3.6, Section S24, Table S28 (paired tests of the parameter-matched MLP against the KAN) |
+| `r41_exact_route_precision` | Sections 2.7, 3.3 and 3.4, Section S25, Table S29 (exact-route precision, input clipping, constants of Equation (3)) |
 | `make_equations`, `equation` | Equations (1) and (2) |
 | `f00`–`f06`, `build_tables`, `build_tables2` | figures and formatted tables (written to `submission_foods/`) |
 
@@ -108,7 +114,7 @@ Revision analyses (`revision/`, run as `python -m revision.<script>`):
 | Script | Supplementary section |
 |---|---|
 | `r01_nested_generalisation.py` | S4, Table S3: leave-one-lot-out / leave-one-season-out with selection nested in each fold (and the frozen control) |
-| `r03_low_level_authentic_bootstrap.py` | S16–S17: low-level identification, false positives on authentic tahini, two-stage lot/sample bootstrap |
+| `r03_low_level_authentic_bootstrap.py` | Table 5 (per-lot false-positive rates, arm A = nested) and S16–S17: low-level identification, false positives on authentic tahini, two-stage lot/sample bootstrap |
 | `r04_repeated_grouped_splits.py` | S23: 30 repeated grouped hold-outs, corrected t-tests and equivalence tests |
 | `r05_oof_lod.py` | Table 4 (out-of-fold columns) and S17 |
 | `r07_band_artifact_controls.py`, `r07b_band_confound_checks.py` | S14: artefact controls for the selected channels |

@@ -19,7 +19,7 @@ from kanfood.interpret import fit_kan
 from paper1_rigor.bandlabels import MIR_ANNOT, NIR_ANNOT, annotate as band_annotate
 from paper1_rigor.common import (TAHINI, MANGO, SEED, ROOT, tahini_split, mango_split)
 from paper1_rigor.figstyle import (COL2, panel, save, tidy, check_no_title,
-                                   check_no_overlap, ACCENT, NEUTRAL)
+                                   check_no_overlap, check_legend_clear, ACCENT, NEUTRAL)
 
 R = ROOT / "results_rigor"
 
@@ -94,11 +94,13 @@ def fig_chemistry(a1, ds_m, mtr):
     wn, load = a1["wavenumbers"], a1["pls_loadings"]
     for k in range(3):
         ax.plot(wn, load[:, k], lw=1.0, label=f"$x_{{{k+1}}}$")
-    ax.axhline(0, color="0.6", lw=0.6)
+    ax.axhline(0, color="0.6", lw=0.6, gid="guide")
     ax.set_xlim(wn.max(), wn.min())
     ax.set_xlabel("Wavenumber (cm$^{-1}$)"); ax.set_ylabel("PLS loading")
     band_annotate(ax, MIR_ANNOT, headroom=0.55)
-    ax.legend(loc="lower left", ncol=3, fontsize=6.5)
+    # Above the frame: inside it, every corner is crossed by at least one loading.
+    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=3, fontsize=6.5,
+              borderaxespad=0.2)
     panel(ax, "a")
 
     ax = tidy(axes[1])
@@ -107,15 +109,18 @@ def fig_chemistry(a1, ds_m, mtr):
     nm, loadm = ds_m.wavenumbers, pf.pls.x_loadings_
     for k in range(3):
         ax.plot(nm, loadm[:, k], lw=1.0, label=f"$x_{{{k+1}}}$")
-    ax.axhline(0, color="0.6", lw=0.6)
-    ax.set_xlabel("Wavelength (nm)"); ax.set_ylabel("PLS loading (1st-derivative spectra)")
-    band_annotate(ax, NIR_ANNOT, headroom=0.55)
-    ax.legend(loc="lower left", ncol=3, fontsize=6.5)
+    ax.axhline(0, color="0.6", lw=0.6, gid="guide")
+    ax.set_xlabel("Wavelength (nm)"); ax.set_ylabel("PLS loading (first-derivative spectra)")
+    # More headroom than panel (a): with 0.55 the lowest label tier sat on the 840 nm loading.
+    band_annotate(ax, NIR_ANNOT, headroom=1.0)
+    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=3, fontsize=6.5,
+              borderaxespad=0.2)
     panel(ax, "b")
 
     fig.tight_layout()
     check_no_title(fig)
     check_no_overlap(fig)
+    check_legend_clear(fig)
     save(fig, "Figure_11_chemistry")
 
 

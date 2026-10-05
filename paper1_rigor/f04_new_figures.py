@@ -13,7 +13,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from paper1_rigor.common import OUT, ROOT
 from paper1_rigor.figstyle import (COL1, COL2, MODEL_COLOR, MODEL_ORDER, ACCENT, NEUTRAL,
-                                   panel, save, tidy, check_no_title, check_no_overlap)
+                                   panel, save, tidy, check_no_title, check_no_overlap,
+                                   check_legend_clear, mlabel, signed)
+
+# The ablation arms as the reader should see them (the CSV keeps the short codes of the scripts).
+ABLATION_LABEL = {
+    "grid G=3": "Grid $G$ = 3", "grid G=10": "Grid $G$ = 10", "grid G=20": "Grid $G$ = 20",
+    "spline order k=2": "Spline order $k$ = 2", "spline order k=4": "Spline order $k$ = 4",
+    "hidden width (2,)": "Hidden width (2,)", "hidden width (3,)": "Hidden width (3,)",
+    "hidden width (4,)": "Hidden width (4,)", "hidden width (5,)": "Hidden width (5,)",
+    "hidden width (8, 4)": "Hidden width (8, 4)", "hidden width (32, 16)": "Hidden width (32, 16)",
+    "lambda=0": r"$\lambda$ = 0", "lambda=0.01": r"$\lambda$ = 0.01", "lambda=0.1": r"$\lambda$ = 0.1",
+    "preprocessing sg1": "SG first derivative", "preprocessing snv+sg1": "SNV + SG first derivative",
+    "preprocessing msc": "MSC", "preprocessing snv": "SNV",
+}
 
 
 def _read(name):
@@ -40,6 +53,16 @@ def fig_validation():
     gen = _read("r04_generalisation_raw.csv")
     if rob is None or gen is None:
         return
+    # Table S3 and Section S4 report the mango SVR folds of the rerun (Section S8), because the
+    # original first-season value (0.248) could not be reproduced by any SVR configuration of the
+    # search; the figure must show the same values as the table (frozen arm "F" of revision/r01).
+    wide = pd.read_csv(ROOT / "revision" / "results" / "r01" / "mango_per_fold_wide.csv")
+    svr = wide[(wide.arm == "F") & (wide.model == "SVM")].iloc[0]
+    sel = (gen.dataset == "mango") & (gen.model == "SVM")
+    assert sel.sum() == 4
+    gen = gen.copy()
+    gen.loc[sel, "R2_mean"] = [float(svr[str(int(f))]) for f in gen.loc[sel, "held_out"]]
+    assert abs(gen.loc[sel, "R2_mean"].mean() - 0.772) < 5e-4
     fig, axes = plt.subplots(1, 3, figsize=(COL2, 2.5))
 
     # (a) ten independent grouped hold-outs on tahini
@@ -50,15 +73,15 @@ def fig_validation():
                    v, s=9, color=MODEL_COLOR[m], alpha=.75, lw=0)
         ax.plot([i - .28, i + .28], [v.mean()] * 2, color=MODEL_COLOR[m], lw=1.6)
     ax.set_xticks(range(len(MODEL_ORDER)))
-    ax.set_xticklabels(MODEL_ORDER, rotation=45, ha="right")
-    ax.set_ylabel(r"test $R^2$ (tahini fraction)")
-    ax.set_xlabel("ten independent grouped hold-outs")
+    ax.set_xticklabels([mlabel(m) for m in MODEL_ORDER], rotation=45, ha="right")
+    ax.set_ylabel(r"Test $R^2$ (tahini fraction)")
+    ax.set_xlabel("Ten independent grouped hold-outs")
     ax.set_ylim(0.6, 1.02)
     tidy(ax); panel(ax, "a")
 
     # (b, c) leave-one-lot-out and leave-one-season-out
-    for k, (ds, lab, ylo) in enumerate([("tahini", "held-out tahini lot", 0.2),
-                                        ("mango", "held-out mango season", 0.2)]):
+    for k, (ds, lab, ylo) in enumerate([("tahini", "Withheld tahini lot", 0.2),
+                                        ("mango", "Withheld mango season", 0.2)]):
         ax = axes[k + 1]
         sub = gen[gen.dataset == ds]
         for i, m in enumerate(MODEL_ORDER):
@@ -68,8 +91,8 @@ def fig_validation():
             if len(v):
                 ax.plot([i - .28, i + .28], [v.mean()] * 2, color=MODEL_COLOR[m], lw=1.6)
         ax.set_xticks(range(len(MODEL_ORDER)))
-        ax.set_xticklabels(MODEL_ORDER, rotation=45, ha="right")
-        ax.set_ylabel(r"fold $R^2$")
+        ax.set_xticklabels([mlabel(m) for m in MODEL_ORDER], rotation=45, ha="right")
+        ax.set_ylabel(r"Fold $R^2$")
         ax.set_ylim(ylo, 1.02)
         ax.set_xlabel(lab)
         tidy(ax); panel(ax, "bc"[k])
@@ -98,9 +121,9 @@ def fig_ablation():
         y = np.arange(len(sub))
         ax.barh(y, sub.delta_vs_published, color=cols, height=.68)
         ax.set_yticks(y)
-        ax.set_yticklabels(sub.config, fontsize=7)
+        ax.set_yticklabels([ABLATION_LABEL.get(c, c) for c in sub.config], fontsize=7)
         ax.axvline(0, color="#334155", lw=.8)
-        ax.set_xlabel(r"$\Delta$ cross-validated $R^2$ vs published configuration")
+        ax.set_xlabel(r"$\Delta$ cross-validated $R^2$ vs. published configuration")
         # the catastrophic arms compress everything else; clip and annotate instead
         lo = max(sub.delta_vs_published.min(), -0.08)
         ax.set_xlim(lo * 1.15, max(0.055, sub.delta_vs_published.max() * 1.25))
@@ -108,7 +131,7 @@ def fig_ablation():
         # catastrophic arm (tahini lambda = 0.1 is -1.18, not -0.08).
         for yi, d in zip(y, sub.delta_vs_published):
             if d < lo:
-                ax.text(lo * 1.05, yi, f"{d:.2f}", va="center", ha="left", fontsize=6.5,
+                ax.text(lo * 1.05, yi, signed(d, ".2f"), va="center", ha="left", fontsize=6.5,
                         color="#111827", bbox=dict(fc="white", ec="none", pad=0.8))
         tidy(ax); panel(ax, "ab"[k])
     fig.tight_layout(); check_no_title(fig)
@@ -144,7 +167,7 @@ def fig_extraction():
                        alpha=.85, lw=0)
             for j in np.where(~inside)[0]:
                 ax.scatter([i + jit[j]], [lo], s=17, marker="v", color=col, lw=0)
-                ax.annotate(f"{v[j]:.2f}", (i + jit[j], lo), fontsize=5.8, color=col,
+                ax.annotate(signed(v[j], ".2f"), (i + jit[j], lo), fontsize=5.8, color=col,
                             xytext=(4, 1), textcoords="offset points", va="bottom")
             ax.plot([i - .25, i + .25], [np.nanmedian(v)] * 2, color=col, lw=1.8)
         ax.set_ylim(lo, hi)
@@ -152,8 +175,8 @@ def fig_extraction():
         ax.set_xticks(range(len(protos)))
         ax.set_xticklabels(["published\nprotocol", "corrected\nprotocol"][:len(protos)],
                            fontsize=7.5)
-        ax.set_ylabel(r"closed-form equation $R^2$ (external)")
-        ax.set_xlabel(ds)
+        ax.set_ylabel(r"Closed-form equation $R^2$ (external)")
+        ax.set_xlabel(ds.capitalize())
         tidy(ax); panel(ax, "ab"[k])
 
     # (c) inner-CV mean by protocol, both datasets
@@ -162,23 +185,25 @@ def fig_extraction():
     if len(inner):
         g = inner.groupby(["dataset", "protocol"])["r2_symbolic"].mean().reset_index()
         protos = list(dict.fromkeys(g.protocol))
-        w, x = 0.38, np.arange(len(protos))
+        x = np.arange(len(protos))
+        # Means on an axis that does not start at zero are drawn as points, not as bars.
         for j, ds in enumerate(["tahini", "mango"]):
             vals = [float(g[(g.dataset == ds) & (g.protocol == p)]["r2_symbolic"].iloc[0])
                     if len(g[(g.dataset == ds) & (g.protocol == p)]) else np.nan for p in protos]
-            ax.bar(x + (j - .5) * w, vals, width=w, label=ds,
-                   color=[ACCENT, NEUTRAL][j])
+            ax.plot(x + (j - .5) * 0.18, vals, ["o", "s"][j], ms=5, ls="none", label=ds,
+                    color=[ACCENT, NEUTRAL][j])
         ax.set_xticks(x)
+        ax.set_xlim(-0.5, len(protos) - 0.5)
         ax.set_xticklabels([p.split()[0] for p in protos], fontsize=7.5)
-        ax.set_ylabel(r"inner-CV equation $R^2$")
-        # The protocols differ by a few hundredths; a zero-based axis hides the whole effect,
-        # and a legend inside the frame lands on the bars.
+        ax.set_ylabel(r"Inner-CV equation $R^2$")
+        # The protocols differ by a few hundredths, so the axis is set to the data; the legend
+        # sits above the frame so that it cannot land on the points.
         vals = [v for v in g["r2_symbolic"] if np.isfinite(v)]
         ax.set_ylim(max(0.0, min(vals) - 0.06), min(1.02, max(vals) + 0.03))
         ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False,
                   fontsize=6.5)
         tidy(ax); panel(ax, "c")
-    fig.tight_layout(); check_no_title(fig)
+    fig.tight_layout(); check_no_title(fig); check_legend_clear(fig)
     save(fig, "Figure_08_extraction_protocol")
 
 
@@ -201,11 +226,16 @@ def fig_band_equation():
             sub = inner_t[inner_t.model == name]
             if not len(sub):
                 continue
-            g = sub.groupby("k")["R2"].max()
+            # VIP ranking only: the inner search also offered a mutual-information ranking, which
+            # no model selected, and taking the maximum over both would mix the two (Section 2.7).
+            g = sub[sub.method == "vip"].groupby("k")["R2"].mean()
             ax.plot(g.index, g.values, marker="o", ms=3, color=col, label=name)
-        ax.set_xlabel("number of retained bands, $k$")
-        ax.set_ylabel(r"inner-CV $R^2$")
-        ax.legend()
+        ax.set_xlabel("Number of bands offered, $k$")
+        ax.set_ylabel(r"Inner-CV $R^2$")
+        # Every curve lies above 0.93; extending the axis down leaves an empty strip for the
+        # legend instead of laying it over the curves (check_legend_clear enforces it).
+        ax.set_ylim(0.895, ax.get_ylim()[1])
+        ax.legend(loc="lower right")
     tidy(ax); panel(ax, "a")
 
     # (b) what each model achieves against how many bands it actually needs. This is the point of
@@ -226,14 +256,14 @@ def fig_band_equation():
                    edgecolor=ACCENT if is_kan else NEUTRAL, lw=1.1, zorder=3)
         if is_eq:
             ax.annotate(str(r.model).replace("KAN ", "").replace(" equation", ""),
-                        (used, r.R2_mean), fontsize=6, xytext=(5, -2),
+                        (used, r.R2_mean), fontsize=6, xytext=(7, -1),
                         textcoords="offset points", va="center")
     ax.annotate(f"every other model uses\nall {kbest} bands", (kbest, float(sub.R2_mean.max())),
                 fontsize=6, xytext=(-6, 10), textcoords="offset points", ha="right",
                 color="0.35")
     ax.set_xlim(sub.vars_median.min() - 2 if sub.vars_median.notna().any() else 0, kbest + 2)
-    ax.set_xlabel(f"bands actually used (of {kbest} offered)")
-    ax.set_ylabel(r"external $R^2$")
+    ax.set_xlabel(f"Bands actually used (of {kbest} offered)")
+    ax.set_ylabel(r"External $R^2$")
     tidy(ax); panel(ax, "b")
 
     # (c) bands fixed in advance by chemistry rather than chosen from the data
@@ -243,14 +273,17 @@ def fig_band_equation():
         anc = anc.sort_values("R2_mean")
         y = np.arange(len(anc))
         cols = [ACCENT if "KAN" in str(m) else NEUTRAL for m in anc.model]
-        ax.barh(y, anc.R2_mean, xerr=anc.R2_sd, color=cols, height=.66,
-                error_kw=dict(lw=.7, ecolor="#334155"))
+        # Means with seed SD on an axis that does not start at zero: points, not bars.
+        for yi, (mu, sd, c) in enumerate(zip(anc.R2_mean, anc.R2_sd, cols)):
+            ax.errorbar(mu, yi, xerr=0 if not np.isfinite(sd) else sd, fmt="o", ms=4, color=c,
+                        ecolor=c, elinewidth=0.9, capsize=2)
         ax.set_yticks(y)
         ax.set_yticklabels(anc.model, fontsize=6)
-        ax.set_xlabel(r"external $R^2$ (anchored bands)")
+        ax.set_ylim(-0.6, len(anc) - 0.4)
+        ax.set_xlabel(r"External $R^2$ (anchored bands)")
         ax.set_xlim(max(0.0, float(anc.R2_mean.min()) - 0.04), 1.0)
     tidy(ax); panel(ax, "c")
-    fig.tight_layout(); check_no_title(fig); check_no_overlap(fig)
+    fig.tight_layout(); check_no_title(fig); check_no_overlap(fig); check_legend_clear(fig)
     save(fig, "Figure_09_band_equation")
 
 

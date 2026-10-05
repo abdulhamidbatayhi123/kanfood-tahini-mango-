@@ -19,8 +19,8 @@ authors:
   - family-names: "Arici"
     given-names: "Muhammed"
     affiliation: "Yildiz Technical University, Department of Food Engineering"
-version: "2.1.1"
-date-released: "2026-09-28"
+version: "2.2.0"
+date-released: "2026-10-05"
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
 repository-code: "https://github.com/abdulhamidbatayhi123/kanfood-tahini-mango-"

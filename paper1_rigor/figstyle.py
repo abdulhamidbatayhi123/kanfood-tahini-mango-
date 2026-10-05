@@ -148,3 +148,67 @@ def check_no_title(fig):
     if fig._suptitle is not None and fig._suptitle.get_text():
         bad.append(fig._suptitle.get_text())
     assert not bad, f"figure carries an internal title (put it in the caption instead): {bad}"
+
+
+# The analysis code calls the support-vector model "SVM"; the article calls it SVR (support vector
+# regression), and a figure must use the article's name. Every model label a reader sees goes
+# through mlabel().
+MODEL_LABEL = {"SVM": "SVR"}
+
+
+def mlabel(m):
+    return MODEL_LABEL.get(m, m)
+
+
+def signed(v, fmt):
+    """A number with a true minus sign (U+2212), as in the article's text and tables."""
+    return format(v, fmt).replace("-", "−")
+
+
+def check_legend_clear(fig, samples=40):
+    """Guard: no plotted line, curve or marker passes underneath a legend.
+
+    In the first-round figures two legends sat on the spectra they described, which the eye
+    forgives on screen and a reviewer does not on paper. Every line is sampled densely along its
+    segments (so a straight line crossing the legend box is caught even with no vertex inside)
+    and every scatter offset is tested against the legend's window extent.
+    """
+    import numpy as _np
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    problems = []
+    for ax in fig.axes:
+        leg = ax.get_legend()
+        if leg is None or not leg.get_visible():
+            continue
+        bb = leg.get_window_extent(renderer=r)
+
+        def inside(pts):
+            return _np.any((pts[:, 0] > bb.x0) & (pts[:, 0] < bb.x1)
+                           & (pts[:, 1] > bb.y0) & (pts[:, 1] < bb.y1))
+
+        for ln in ax.get_lines():
+            # Faint reference lines (band guides, the zero line) may pass behind an opaque
+            # legend box; they are tagged gid="guide" and the legend is drawn with a white face.
+            if not ln.get_visible() or ln.get_gid() == "guide":
+                continue
+            xy = _np.asarray(ln.get_xydata(), float)
+            xy = ln.get_transform().transform(xy[_np.isfinite(xy).all(1)])
+            if len(xy) > 1:
+                t = _np.linspace(0, 1, samples)[:, None]
+                xy = _np.concatenate([a + t * (b - a) for a, b in zip(xy[:-1], xy[1:])])
+            if len(xy) and inside(xy):
+                problems.append(f"axis {fig.axes.index(ax)}: line {ln.get_label()!r}")
+        for c in ax.collections:
+            off = _np.asarray(c.get_offsets(), float)
+            if len(off) and inside(c.get_offset_transform().transform(off)):
+                problems.append(f"axis {fig.axes.index(ax)}: markers {c.get_label()!r}")
+        for t in ax.texts:
+            if t.get_visible() and t.get_text().strip() and t.get_gid() != PANEL_GID                     and t.get_window_extent(renderer=r).overlaps(bb):
+                problems.append(f"axis {fig.axes.index(ax)}: label {t.get_text()!r}")
+    assert not problems, "data underneath a legend: " + "; ".join(problems)
+
+
+# A legend that sits over faint reference lines hides them behind a white face rather than letting
+# dotted guides run through its text.
+OPAQUE_LEGEND = dict(frameon=True, facecolor="white", edgecolor="none", framealpha=1.0)
